@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Mathematical expression</h1>
+
+    <form id="myForm" action="">
+        <label for="expression">Mathematical Expression</label>
+        <input type="text" id="expression" name="expression">
+        <input type="submit" value="Evaluate">
+
+        <h1 id="result"></h1>
+
+        <script>
+            document.getElementById('myForm').onsubmit = function(event) {
+                event.preventDefault();
+             
+                let exp = document.getElementById('expression').value;
+
+                try {
+                    let result = eval(exp);
+                    document.getElementById('result').innerHTML = result;
+                } catch(error) {
+                    document.getElementById('result').innerHTML = "Error Thrown: " + error.message;
+                }
+            }
+        </script>
+    </form>
+    
+</body>
+</html>

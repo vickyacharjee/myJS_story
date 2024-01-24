@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form validation</h1>
+    <form id="myForm" action="">
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text">
+
+        <br><br>
+
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text">
+
+         <br><br>
+        <label for="mobile">Mobile</label>
+        <input id="mobile" name="mobile" type="text">
+        <br><br>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text">
+
+        <br><br>
+         
+        <label for="gender">Gender</label>
+        <input name="intrests" id="sports" value="sports" type="radio">
+        <input name="intrests" id="music" value="music" type="radio">
+
+        <br><br>
+        <input type="submit" value="submit">
+
+
+
+
+    </form>
+<script>
+
+document.getElementById("myForm").onsubmit=function(event){
+    event.preventDefault();
+
+    let name=document.getElementById('name').value;
+    let email=document.getElementById('email').value;
+    let mobile=document.getElementById('mobile').value;
+
+    if(name.length==0||email.length==0||mobile.length==0){
+        alert('fill all the empty man');
+    }
+    //validate using the mail iD
+
+    if(mobile.length!=10 ||isNaN(mobile)){
+        alert('mobile number should be 10');
+    }
+
+
+    alert("form submitted successfully");
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="myForm">
+
+        <input id="number" type="text">
+        <input value="calculate" type="submit">
+
+        <h3 id="result"></h3>
+    </form>
+
+    <script>
+        document.getElementById('myForm').onsubmit=function(event){
+            event.preventDefault();
+
+            let n=document.getElementById('number').value;
+
+            try{
+                let res=eval(n);
+                document.getElementById('result').innerHTML=res;
+            }
+            catch(error){
+                document.getElementById('result').innerHTML=error.message;
+
+            }
+
+        }
+    </script>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for eval function</h1>
+    <form id="mForm">
+    <input type="text" id="n">
+    <input type="submit" value="calculate">
+    </form> 
+
+    <h1 id="result"></h1>
+
+    <script>
+        document.getElementById('mForm').onsubmit=function(event){
+            event.preventDefault();
+
+            let n=document.getElementById('n').value;
+
+            try{
+                let res=eval(n);
+                document.getElementById('result').innerHTML=res; 
+            }
+            catch(error){
+                document.getElementById('result').innerHTML=error.message;
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

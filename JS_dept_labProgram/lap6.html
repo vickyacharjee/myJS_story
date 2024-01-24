@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student information</h1>
+
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text">
+
+    <label for="name">Math Score:</label>
+    <input id="math" name="name" type="number">
+
+    <label for="name">science Score:</label>
+    <input id="science" name="name" type="number">
+
+    <label for="name">English score:</label>
+    <input id="english" name="name" type="number">
+    
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text">
+
+    <input type="button" onclick="calc()" value="calculate">
+
+    <input type="text" id="nam" readonly>
+    <input type="text" id="total" readonly>
+    <input type="text" id="grade" readonly>
+
+    <!-- <script>
+        let x = {
+            size:"1",
+            color:"21",
+            list:[
+                1,2,3
+            ]
+        }
+
+        let b = JSON.stringify(x);
+        b = JSON.parse(b);
+
+        b.color = "2";
+
+        console.log(x.color);
+        console.log(b.color)
+      
+   
+    </script> -->
+
+
+
+    <script>
+
+        function calc(){
+        let nam=document.getElementById('name').value;
+        
+        let math=parseFloat(document.getElementById('math').value);
+        let science=parseFloat(document.getElementById('science').value);
+        let english=parseFloat(document.getElementById('english').value);
+
+        let total=math+science+english;
+
+        
+
+            // alert(nam);
+            
+            
+        if(isString(nam)) {
+            document.getElementById('nam').value=nam;
+        }   
+            
+        
+        
+        
+        document.getElementById('total').value=total;
+        document.getElementById('grade').value=avg();
+
+
+       function avg(){
+
+        if(total>90){
+            return "A";
+        }
+
+        if(total>45 || total<90){
+            return "B";
+        }
+
+        
+
+       }
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

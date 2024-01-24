@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Employee Salary Calculator</title> 
+</head> 
+<body style="background-color:powderblue;"> 
+    <h1>Employee Salary Calculator</h1> 
+    <form id="employeeForm"> 
+        <label for="name">Name:</label> 
+        <input type="text" id="name" name="name"><br><br> 
+        <label for="basicSalary">Basic Salary:</label> 
+        <input type="number" id="basicSalary" name="basicSalary" min="0"><br><br> 
+        <label for="hraPercentage">HRA Percentage (%):</label> 
+        <input type="number" id="hraPercentage" name="hraPercentage" min="0" max="100"><br><br> 
+        <label for="daPercentage">DA Percentage (%):</label> 
+        <input type="number" id="daPercentage" name="daPercentage" min="0" max="100"><br><br> 
+        <label for="pfPercentage">PF Percentage (%):</label> 
+        <input type="number" id="pfPercentage" name="pfPercentage" min="0" max="100"><br><br> 
+        <label for="taxPercentage">Income Tax Percentage (%):</label> 
+        <input type="number" id="taxPercentage" name="taxPercentage" min="0" max="100"><br><br> 
+        <input type="button" value="Calculate Salary" onclick="calculateSalary()"><br><br> 
+
+
+        
+        <label for="da">DA:</label> 
+        <input type="text" id="da" name="da" readonly><br><br> 
+        <label for="hra">HRA:</label> 
+        <input type="text" id="hra" name="hra" readonly><br><br> 
+        <label for="pf">PF:</label> 
+        <input type="text" id="pf" name="pf" readonly><br><br> 
+        <label for="tax">Income Tax:</label> 
+        <input type="text" id="tax" name="tax" readonly><br><br> 
+        <label for="grossPay">Gross Pay:</label> 
+        <input type="text" id="grossPay" name="grossPay" readonly><br><br> 
+        <label for="deduction">Deduction:</label> 
+        <input type="text" id="deduction" name="deduction" readonly><br><br> 
+        <label for="netPay">Net Pay:</label> 
+        <input type="text" id="netPay" name="netPay" readonly><br><br>
+    </form> 
+
+    <script> 
+        function calculateSalary() { 
+            // Get input values 
+            var basicSalary = parseFloat(document.getElementById("basicSalary").value); 
+            var hraPercentage = parseFloat(document.getElementById("hraPercentage").value); 
+            var daPercentage = parseFloat(document.getElementById("daPercentage").value); 
+            var pfPercentage = parseFloat(document.getElementById("pfPercentage").value); 
+            var taxPercentage = parseFloat(document.getElementById("taxPercentage").value); 
+
+            // Calculate components 
+            var da = (daPercentage / 100) * basicSalary; 
+            var hra = (hraPercentage / 100) * basicSalary; 
+            var pf = (pfPercentage / 100) * basicSalary; 
+            var tax = (taxPercentage / 100) * basicSalary; 
+            var grossPay = basicSalary + da + hra; 
+            var deduction = pf + tax; 
+            var netPay = grossPay - deduction; 
+
+            // Display results 
+            document.getElementById("da").value = da.toFixed(2); 
+            document.getElementById("hra").value = hra.toFixed(2); 
+            document.getElementById("pf").value = pf.toFixed(2); 
+            document.getElementById("tax").value = tax.toFixed(2); 
+            document.getElementById("grossPay").value = grossPay.toFixed(2); 
+            document.getElementById("deduction").value = deduction.toFixed(2); 
+            document.getElementById("netPay").value = netPay.toFixed(2); 
+        } 
+    </script> 
+</body> 
+</html>

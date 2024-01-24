@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>sum of all ntaural numbers</h1>
+    <h3>Enter a positive numbers only</h3>
+
+    <input type="number" id="num">
+    <button onclick="func()">calculate SUM</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function func(){
+        let n=document.getElementById('num').value;
+        n=parseInt(n);
+
+        //check either the number is psoitive or negative
+        if(n<=0 || isNaN(n)){
+            alert('please Enter a psoitive integer');
+
+        }
+
+        //calculate the sum of all nartural number
+       
+        let sum=0;
+        for(let i=0;i<n;i++){
+            sum=sum+i;
+        }
+
+        //Displat the results
+        document.getElementById('result').innerHTML=sum;
+
+
+
+
+
+
+        }
+    </script>
+    
+</body>
+</html>

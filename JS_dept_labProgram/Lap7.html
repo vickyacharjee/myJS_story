@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Date in Words</title>
+</head>
+<body style="background-color:powderblue;">
+  <h1>Current Date in Words</h1>
+  <p id="dateInWords"></p>
+
+  <script>
+    // Array to store names of days of the week
+    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    // Array to store names of months
+    var months = ["Jan", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decer"];
+    
+    // Get the current date
+    var currentDate = new Date();
+    // Get day, month, and year
+    var day = daysOfWeek[currentDate.getDay()];
+    var month = months[currentDate.getMonth()];
+    var year = currentDate.getFullYear();
+    
+    // Display the current date in words
+    var dateInWords = day + ", " + month + " " + currentDate.getDate() + ", " + year;
+    document.getElementById("dateInWords").textContent = "Current Date: " + dateInWords;
+  </script>
+</body>
+</html>
