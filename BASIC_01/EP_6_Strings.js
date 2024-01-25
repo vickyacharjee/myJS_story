@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <script>
 
         // let a="vicky";
         // console.log(a);
@@ -162,7 +152,3 @@ console.log(s2);
 
 
 
-
-    </script>
-</body>
-</html>

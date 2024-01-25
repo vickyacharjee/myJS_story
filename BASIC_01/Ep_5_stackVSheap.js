@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<script>
+
 
 let a={
     name:"vicky",
@@ -54,7 +45,3 @@ user2.address="Bengaluru";
 
 console.log(user2);
 console.log(user1);//Here this was printing pure user1 value but with the updated on since its allocation memory in heap is changed
-</script>
-
-</body>
-</html>
