@@ -60,5 +60,6 @@ console.log(name);
 console.log(age);
 console.log(address);
 
+//Destructure individually with user Wished NAme
 console.log(n);
 
