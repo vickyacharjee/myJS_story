@@ -5,7 +5,6 @@
                 console.log(i+"X"+j+"="+i*j);
                 
             }
-            
         }
 
 

@@ -45,3 +45,20 @@ user2.address="Bengaluru";
 
 console.log(user2);
 console.log(user1);//Here this was printing pure user1 value but with the updated on since its allocation memory in heap is changed
+
+const myObj={
+    name:'vicky_Acharjee',
+    age:21,
+    address:'BLR'
+}
+
+
+//Destructue with the same passed obj name
+const{name:n}=myObj;
+const{name,age,address}=myObj;
+console.log(name);
+console.log(age);
+console.log(address);
+
+console.log(n);
+
