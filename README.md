@@ -1,6 +1,6 @@
-# Project Awesomeness 😎
+# myJS_story😎
 
-Hey there! Welcome to Project Awesomeness, where coding meets coolness!
+Hey there! Welcome to myJS_story, where coding meets coolness!
 
 ## What's This All About?
 
