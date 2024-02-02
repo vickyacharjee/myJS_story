@@ -37,11 +37,6 @@
         
         console.log(vic);
 
-
-        
-        
-        
-        
         
         // console.log(user);
 

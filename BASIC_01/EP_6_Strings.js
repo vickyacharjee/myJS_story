@@ -117,6 +117,10 @@ const split2 ="vicky_acharjee_and_i_am_20_yr_old";
 let s2=split2.split('_');
 console.log(s2);
 
+let s3="vicky/acharjee/and/i/am"
+let s33=s3.split('/');
+console.log(s33);
+
 
 //and thats very ovious both will results like(vicky acharjee and i am 20 yr old)
 
