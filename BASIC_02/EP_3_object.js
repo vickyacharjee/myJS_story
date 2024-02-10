@@ -24,17 +24,19 @@
         // console.log(typeof arr2[4]);
 
 
+
+        //Normal method
         let a={
-            name:"vicky",
+            name:"vicky_acharjee",
             class: 'btch'
         }
-
         console.log(a.name);
 
-        let {name:vic}=a;
-        // console.log(name);
 
-        
+        //via destructure
+        let {name:vic}=a;
+        // console.log(name);//if we suppose uncomment and run then it will throw an error since its name priority is given as "vic"
+
         console.log(vic);
 
         
