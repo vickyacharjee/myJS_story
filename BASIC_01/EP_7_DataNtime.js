@@ -7,4 +7,10 @@
         console.log(myDate.getMinutes());
         console.log(myDate.toDateString());
         console.log(myDate.setHours());
+
+
+        //FOR SECONDS... GETS EACH SECONDS
+        const getDate=new Date();
+        console.log(getDate.getSeconds());
+
     
