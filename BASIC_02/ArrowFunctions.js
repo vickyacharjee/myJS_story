@@ -19,11 +19,11 @@ console.log(typeof(arrowE(1,2)));
 console.log(arrowE(1,2));//Explicit
 
 const loop=(n,len)=>{
-    for (let index = n; index < len; index++) {
-       return n+"X"+index+"="+n*index;
+    for (let index = 1; index <= len; index++) {
+       console.log(n+"X"+index+"="+n*index);
     }
 }
 
-const ress=loop(2,10)
+const ress=loop(1,10)
 console.log(ress);
 
