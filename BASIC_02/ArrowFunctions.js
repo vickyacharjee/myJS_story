@@ -23,7 +23,11 @@ const loop=(n,len)=>{
        console.log(n+"X"+index+"="+n*index);
     }
 }
-
 const ress=loop(1,10)
 console.log(ress);
 
+const vicky=()=>{return "hello"}
+console.log(vicky());
+
+const vicky2=()=> "helloFromDiff"
+console.log(vicky2());
