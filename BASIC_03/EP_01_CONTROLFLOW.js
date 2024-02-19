@@ -2,8 +2,8 @@
         //if condition
      
 
-        console.log("yo yo rings");
-        console.log("vicky chapri");
+        console.log("vicky-acharjee");
+        console.log("vicky");
         console.log(45+99);
 
     //   let age=45
