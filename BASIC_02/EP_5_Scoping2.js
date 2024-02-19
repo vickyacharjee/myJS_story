@@ -17,6 +17,19 @@
         // }
         // one()
 
+        //Global
+        if(true){
+            const name="vicky"
+            console.log("First IF");
+            if (true) {
+                console.log("Second IF");
+                if (name==='vicky') {
+                    const website='vickyWEB';
+                    console.log(name);
+                }
+            }
+            // console.log(website);//Throw an error saying website not defined
+        }
 
 
 //Exmaple of scoping with Function::
@@ -39,19 +52,18 @@
 
 //With normal functions
 //with normal functions we can excute the functions independently anywhere unline the anaonymous one
-console.log(addOne(10));
-function addOne(value) {
-    return value+1;
+// console.log(addOne(10));
+// function addOne(value) {
+//     return value+1;
     
-}
+// }
 
 
 // With anonmyous function
-console.log(addTwo(2));//here the problem arises i.e in anaonmyous function once after the declaration of function only we can execute in the next line itself
-const addTwo=function(value) {
-    return value+1;
-    
-}
+// console.log(addTwo(2));//here the problem arises i.e in anaonmyous function once after the declaration of function only we can execute in the next line itself
+// const addTwo=function(value) {
+//     return value+1;
+// }
 
 
 
