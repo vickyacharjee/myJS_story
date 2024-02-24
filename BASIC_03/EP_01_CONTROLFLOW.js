@@ -89,7 +89,6 @@ if (function () {
     
 }
 
-
 let age = 20;
 let eligibility = (age >= 18) ? "Eligible to vote 2222" : "Not eligible to vote";
 
