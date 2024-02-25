@@ -14,7 +14,7 @@
 
 
 
-     //Now invoke is dne in IIFE
+     //Now invoke is done in IIFE
 
         (function vic(){
             console.log("hey 2 world");

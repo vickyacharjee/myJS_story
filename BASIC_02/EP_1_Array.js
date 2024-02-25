@@ -54,7 +54,18 @@
  console.log(arr1.indexOf('22'));// Returns -1 if it dosent contains the element on a given array
 
 
+//++++++++++++++++++++object+++++++++++++++++
+//Remember bydefault in js if we will check typeof any initialized array then it returns an object.. and individually checking then returns based on given condition like num, str, obj, etc
+console.log("test for array");
 
+const arrr=[1,2,3,4,5];
+console.log(typeof(arrr));
+
+const arrr2=["vicky",2,3,4,5];
+console.log(typeof(arrr2[0]));
+
+const arr3=[{name:"vicky"},{age:21}]
+console.log(typeof(arr3[0]));
 
 
 
