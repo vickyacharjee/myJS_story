@@ -21,37 +21,37 @@
 
    //push() method
    arr1.push('shillong');
-   console.log(arr1);
+   console.log("for push",arr1);
    arr1.push('Meghalaya');
-   console.log(arr1);
+   console.log("for push",arr1);
 
    //pop()
    arr1.pop();
-   console.log(arr1);//last element will be removed
+   console.log("for pop",arr1);//last element will be removed
 
    //unshift()
    arr1.unshift('INDIA');
-   console.log(arr1);//adds an eleet at the first position of an index
+   console.log("for unshift",arr1);//adds an eleet at the first position of an index
 
    //shift()
    arr1.shift();
-   console.log(arr1);//itbasically removed the first element from an array element
+   console.log("for shift",arr1);//itbasically removed the first element from an array element
 
   //slice()
-  console.log(arr1.slice(1,2));//acharjee
+  console.log("for slice",arr1.slice(1,2));//acharjee
 
   //splice()
   //   console.log(arr1.splice(1,2));//"acharjee"  "21"
-  console.log(arr1);//The splice is tricky to understnd since its actaually made a change in the original array elements only
+  console.log("for splice",arr1);//The splice is tricky to understnd since its actaually made a change in the original array elements only
 
   //include()
  console.log(arr1.includes('2'));//false (since ikts doesnt contains the elent in the given array)
- console.log(arr1.includes('21'));//True
+ console.log("for include",arr1.includes('21'));//True
 
 
  //indexof()
  console.log(arr1.indexOf('vicky'));// since its contains on the zero elemnt in an array
- console.log(arr1.indexOf('22'));// Returns -1 if it dosent contains the element on a given array
+ console.log("for indxof",arr1.indexOf('22'));// Returns -1 if it dosent contains the element on a given array
 
 
 //++++++++++++++++++++object+++++++++++++++++
