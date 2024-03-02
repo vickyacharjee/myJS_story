@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="layer" id="layer1"></div>
+    <div class="layer" id="layer2"></div>
+
+
+    <style>
+        .layer{
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+        @keyframes moveAnimation {
+ 0% { left: 0; }
+ 50% { left: 50%; top: 50%; background-color: #e74c3c; }
+ 100% { left: 0; top: 0; background-color: #3498db; }
+ }
+    </style>
+  
+  
+  <script>
+    var layer1=document.getElementById('layer1');
+    var layer2=document.getElementById('layer2');
+
+    layer1.style.animationName="moveAnimation";
+    layer1.style.animationDuration="4s";
+    layer1.style.animationTimingFunction="linear";
+    layer1.style.animationIterationCount="infinite"
+
+    layer2.style.animationName="moveAnimation";
+    layer2.style.animationDuration="4s";
+    layer2.style.animationTimingFunction="linear";
+    layer2.style.animationIterationCount="infinite"
+    layer2.style.animationDirection = "reverse";
+
+  </script>
+</body>
+</html>

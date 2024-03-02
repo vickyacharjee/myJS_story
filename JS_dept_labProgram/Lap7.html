@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Current Date in Words</title>
@@ -9,7 +9,7 @@
 
   <script>
     // Array to store names of days of the week
-    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Tursday", "Friday", "Saturday"];
     // Array to store names of months
     var months = ["Jan", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decer"];
     
@@ -25,4 +25,50 @@
     document.getElementById("dateInWords").textContent = "Current Date: " + dateInWords;
   </script>
 </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <p id="dateinwords"></p>
+  <script>
+  var dayofweek=["mon","tue","wed","thurs","sat","fri"];
+  var month=["jan","feb","march"]
+  
+
+  var currentdate=new Date();
+
+  var day=dayofweek[currentdate.getDay()]
+  var month=month[currentdate.getMonth()]
+
+  var dateInWords=day+" "+month;
+  document.getElementById('dateinwords').textContent=dateInWords; 
+
+</script>
+
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

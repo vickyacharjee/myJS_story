@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,11 +36,47 @@
         //Displat the results
         document.getElementById('result').innerHTML=sum;
 
+        }
+    </script>
+    
+</body>
+</html> -->
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number"name="" id="num">
+    <button onclick="func()">submit</button>
+
+    <h2 id="res"></h2>
 
 
+    <script>
+        function func() {
 
+            let num= document.getElementById('num').value;
+            num=parseInt(num);
+
+            if(num<=0||isNaN(num)){
+                alert("eneter valid");
+            }
+
+            let sum=0;
+            for(i=0;i<num;i++){
+                sum=sum+i;
+
+            }
+
+            document.getElementById('res').innerHTML=sum;
+            
+            
         }
     </script>
     

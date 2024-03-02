@@ -1,7 +1,7 @@
 
 //forOf loop
 //forOf is implied to an object=> array or anything like string etc
-// string, Array, Map
+// string, Array, Map (use this as refrence)
 
  
                //syntax
@@ -11,10 +11,12 @@
                 // }
 
 //forOf with array
-    // const arr=[1,2,3,4,5,6];
-    // for (const item of arr) {
-    //     console.log(item);
-    // }
+
+// console.log("for of loop");
+//     const arr=[1,2,3,4,5,6];
+//     for (const item of arr) {
+//         console.log(item);
+//     }
 
 
 
@@ -31,10 +33,10 @@
 
 
 // forOf with string    
-    // const str="Hi, there this is vicky";
-    // for (const item of str) {
-    //     console.log(item);
-    // }
+    const str="Hi, there this is vicky";
+    for (const item of str) {
+        console.log(item);
+    }
 
 
 
@@ -75,8 +77,8 @@ map.set('fr','France')
 //Map(3) {'IN' => 'india', 'USA' => 'United states of America', 'fr' => 'France'}
 
 for (const [key,value] of map) {
-    // console.log(key);//IN USA fr
-    // console.log(value);//india, united states of america, France
+    console.log(key);//IN USA fr
+    console.log(value);//india, united states of america, France
 }
 
 for (const [key,value] of map) {
@@ -88,7 +90,7 @@ for (const [key,value] of map) {
 
 
 
-
+console.log("**********For in loop**********");
 //forIn loop
 // object, array
 // if you want to get the value of it then  use object[key]... so in returns it gets the value
@@ -119,7 +121,7 @@ const array=['vicky','21','address'];
 for (const key in array) {
     console.log(key);//in returns 0,1,2
 }
-//now if we want to get the avlue ofthe index ranther than index position 
+//now if we want to get the value of the index ranther than index position 
 for (const key in array) {
     console.log(array[key]);//in returns 0,1,2
 }
@@ -134,10 +136,10 @@ for (let i = 0; i < array.length; i++) {
      console.log(`   ${i} value is      ${array[i]}`);
 }
 
-
+console.log("********** for each ******************");
 //forEach
 //it mandatory needs an parameter
-//with array, object, array+object
+//with array, object, array+object //this is mainly we use in database operations
 const array2=['vicky','21','Meghalaya'];
 
 array2.forEach(function(i){
@@ -163,7 +165,10 @@ array2.forEach(function(item,index,arr){
 
 
 
-//
+    // callback functions has in total (item, index,arr)=>{}
+    //here items reprents value
+    //here index reprents index position
+    //here arr represents full array
 
 const FilePath=[
     {

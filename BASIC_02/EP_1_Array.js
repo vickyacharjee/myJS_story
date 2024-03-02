@@ -67,6 +67,8 @@ console.log(typeof(arrr2[0]));
 const arr3=[{name:"vicky"},{age:21}]
 console.log(typeof(arr3[0]));
 
+console.log(Boolean(1>0));
+
 
 
 

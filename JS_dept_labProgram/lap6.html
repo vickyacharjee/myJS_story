@@ -1,3 +1,79 @@
+<!-- <!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Student Information Form</title> 
+</head> 
+<body style="background-color:powderblue;"> 
+    <h1>Student Information Form</h1> 
+    <form id="studentForm"> 
+        <label for="name">Name:</label> 
+        <input type="text" id="name" name="name"><br><br> 
+        <label for="math">Math Score:</label> 
+        <input type="number" id="math" name="math" min="0" max="100"><br><br> 
+        <label for="science">Science Score:</label> 
+        <input type="number" id="science" name="science" min="0" max="100"><br><br> 
+        <label for="english">English Score:</label> 
+        <input type="number" id="english" name="english" min="0" max="100"><br><br> 
+        <input type="button" value="Calculate" onclick="calculateResult()"><br><br> 
+        <label for="total">Total Score:</label> 
+        <input type="text" id="total" name="total" readonly><br><br> 
+        <label for="average">Average Score:</label> 
+        <input type="text" id="average" name="average" readonly><br><br> 
+        <label for="result">Result:</label> 
+        <input type="text" id="result" name="result" readonly><br><br> 
+        <label for="grade">Grade:</label> 
+        <input type="text" id="grade" name="grade" readonly><br><br> 
+    </form> 
+    <script> 
+        function calculateResult() { 
+            var mathScore = parseFloat(document.getElementById("math").value); 
+            var scienceScore = parseFloat(document.getElementById("science").value); 
+            var englishScore = parseFloat(document.getElementById("english").value); 
+
+            if (isNaN(mathScore) || isNaN(scienceScore) || isNaN(englishScore)) { 
+                alert("Please enter valid scores for all subjects."); 
+                return; 
+            } 
+
+            var total = mathScore + scienceScore + englishScore; 
+            var average = total / 3; 
+            var result = (mathScore >= 40 && scienceScore >= 40 && englishScore >= 40) ? "Pass" : "Fail"; 
+            var grade = calculateGrade(average); 
+
+            document.getElementById("total").value = total; 
+            document.getElementById("average").value = average.toFixed(2); 
+            document.getElementById("result").value = result; 
+            document.getElementById("grade").value = grade; 
+        } 
+
+        function calculateGrade(average) { 
+            if (average >= 90) { 
+                return "A+"; 
+            } else if (average >= 80) { 
+                return "A"; 
+            } else if (average >= 70) { 
+                return "B"; 
+            } else if (average >= 60) { 
+                return "C"; 
+            } else if (average >= 50) { 
+                return "D"; 
+            } else { 
+                return "F"; 
+            } 
+        } 
+    </script> 
+</body> 
+</html> -->
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,102 +82,73 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>student information</h1>
+    <form>
 
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text">
+        <label for="">Name</label>
+        <input type="text" required><br>
 
-    <label for="name">Math Score:</label>
-    <input id="math" name="name" type="number">
+        <label for="">maths</label>
+        <input type="number" required id="maths"> <br>
 
-    <label for="name">science Score:</label>
-    <input id="science" name="name" type="number">
+        <label for="">science</label>
+        <input type="number" required id="science"><br>
 
-    <label for="name">English score:</label>
-    <input id="english" name="name" type="number">
-    
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text">
+        <input type="button" value="Check" onclick="func()">
 
-    <input type="button" onclick="calc()" value="calculate">
+        <label for="">Total</label>
+        <input type="text" readonly id="total"><br>
 
-    <input type="text" id="nam" readonly>
-    <input type="text" id="total" readonly>
-    <input type="text" id="grade" readonly>
+        <label for="">AVG</label>
+        <input type="text" readonly id="avg"><br>
 
-    <!-- <script>
-        let x = {
-            size:"1",
-            color:"21",
-            list:[
-                1,2,3
-            ]
-        }
+        <label for="">Grade</label>
+        <input type="text" readonly id="grade">
 
-        let b = JSON.stringify(x);
-        b = JSON.parse(b);
-
-        b.color = "2";
-
-        console.log(x.color);
-        console.log(b.color)
-      
-   
-    </script> -->
-
-
+    </form>
 
     <script>
+        function func(){
+            var maths = parseFloat(document.getElementById('maths').value);
+            var science = parseFloat(document.getElementById('science').value);
 
-        function calc(){
-        let nam=document.getElementById('name').value;
-        
-        let math=parseFloat(document.getElementById('math').value);
-        let science=parseFloat(document.getElementById('science').value);
-        let english=parseFloat(document.getElementById('english').value);
+            var total = maths + science;
+            var average = total / 2;
+            var avg = calc(average);
 
-        let total=math+science+english;
-
-        
-
-            // alert(nam);
-            
-            
-        if(isString(nam)) {
-            document.getElementById('nam').value=nam;
-        }   
-            
-        
-        
-        
-        document.getElementById('total').value=total;
-        document.getElementById('grade').value=avg();
-
-
-       function avg(){
-
-        if(total>90){
-            return "A";
+            document.getElementById('total').value = total;
+            document.getElementById('avg').value = average.toFixed(2); // Added toFixed(2) for two decimal places
+            document.getElementById('grade').value = avg;
         }
 
-        if(total>45 || total<90){
-            return "B";
+        function calc(average){
+            if (average >= 90) {
+                return "A+";
+            } else if (average >= 80) {
+                return "A";
+            } else if (average >= 70) {
+                return "B";
+            } else if (average >= 60) {
+                return "C";
+            } else if (average >= 50) {
+                return "D";
+            } else {
+                return "F";
+            }
         }
-
-        
-
-       }
-
-
-        }
-
-
-
-
-
-
-
     </script>
-    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

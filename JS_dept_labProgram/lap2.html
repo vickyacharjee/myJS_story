@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,6 +31,44 @@
             }
         </script>
     </form>
+    
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="mform" action="">
+        <input id="exp" type="text">
+        <input type="submit">
+    </form>
+    <p id="p"></p>
+
+    <script>
+        document.getElementById('mform').onsubmit=function(event){
+            event.preventDefault();
+
+            var exp=document.getElementById('exp').value;
+
+            try{
+                var res=eval(exp);
+                document.getElementById('p').innerHTML=res;
+            }
+
+            catch(error){
+                document.getElementById('p').innerHTML=error.message;
+            }
+
+        }
+    </script>
     
 </body>
 </html>
