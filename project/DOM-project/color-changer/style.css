@@ -1,9 +1,14 @@
 
-body{
+section{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+h1{
+    text-align: center;
+    font-size: 80px;
+    font-family: sans-serif;
 }
 
 
@@ -11,6 +16,7 @@ body{
     padding: 50px;
     margin-inline:20px ;
     border-radius: 10px;
+    cursor: pointer;
     
 }
 #yellow{
