@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 id="change">yo without setTimeOUt</h1>
+
+
+
+
+
+    <script>
+   // set timeOut basically pokes to the callback or handler after time is over and time is at MS
+   //eg:
+    //    setTimeout(()=>{
+    //     console.log("hey after 3 seconds");
+    //    },3000)
+
+    //eg: via DOM
+
+    setTimeout(()=>{
+        document.getElementById('change').innerHTML="yo after 3 seconds";
+    },2000)
+
+
+
+
+
+       
+    </script>
+    
+</body>
+</html>

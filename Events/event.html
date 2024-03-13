@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img id="lotus" src="https://images.pexels.com/photos/110686/pexels-photo-110686.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></li>
+        <li><img id="peacock" src="https://images.pexels.com/photos/53184/peacock-bird-plumage-color-53184.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></li>
+        <li><img id="night" src="https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""></li>
+    </ul>
+    //There are  baically 3 ways to get an event
+    1. embed inside html tag only...onclick();
+    2. insdie document... document.getElementById().onclick=function(){//logic};
+    3. using addEventListner [recomended]
+
+    
+</body>
+<script>
+    // document.getElementById('lotus').addEventListener('click',()=>{
+    //     alert('lotus');
+    // })
+
+    //in eventlistners we have to expressions 
+    // 1. capturing mode (TRUE) => it checks from outter to inner tag or element
+    // 2. bubbling mode (FALSE) => it checks from inner to outter tag or element
+
+    //another way is do with stropPropagation();
+
+    // document.getElementById('lotus').addEventListener('click',()=>{
+    //     console.log('clicked inside lotus');
+    // },true)
+    // document.getElementById('images').addEventListener('click',()=>{
+    //     console.log('clicked inside images');
+    // },true)
+
+    //remove an image on click
+    document.querySelector('#images').addEventListener('click',(e)=>{
+
+
+        console.log(e.target.tagName);
+        console.log(e.target.parentNode);
+
+        if (e.target.tagName=='IMG') {
+            let removeIt=e.target.parentNode;
+        removeIt.remove();
+        }
+
+        
+
+    })
+
+
+</script>
+</html>
