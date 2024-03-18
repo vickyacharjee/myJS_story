@@ -23,10 +23,24 @@
 
     //eg: via DOM
 
-    setTimeout(()=>{
-        document.getElementById('change').innerHTML="yo after 3 seconds";
-    },2000)
+    // setTimeout(()=>{
+    //     document.getElementById('change').innerHTML="yo after 3 seconds";
+    // },2000)
 
+    const name=()=>{
+        console.log("yo vicZ here");
+    }
+    setTimeout(name,2000);//always remember to give only refrences
+
+    //another example:
+    const changeText=()=>{
+        document.getElementById('change').innerHTML="completed 2 seconds"
+    }
+    setTimeout(changeText,2000);
+
+    
+
+    
     setInterval(()=>{
         console.log("yoyo");
     },2000)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github API</title>
+</head>
+<body>
+    <h1>Displaying API content [name,followers,following] from api.github </h1>
+
+    <table style="text-align: center;" border="">
+        <thead>
+            <th>name &nbsp;</th>
+            <th>followers</th>
+            <th>following</th>
+        </thead>
+        <tbody>
+            <td id="name"></td>
+            <td id="fol"></td>
+            <td id="following"></td>
+
+        </tbody>
+    </table>
+ <script>
+    const reqUrl='https://api.github.com/users/vickyacharjee';
+    const xhr=new XMLHttpRequest();
+    let followers = 0;
+    let following = 0;
+    let name = '';
+    
+    function processData() {
+        document.getElementById('fol').innerHTML=followers;
+        document.getElementById('following').innerHTML=following;
+        document.getElementById('name').innerHTML=name;
+    }
+
+    xhr.open('GET',reqUrl);
+    
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState===4 && xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            followers = data.followers;
+            following = data.following;
+            name      = data.name;
+            processData(); 
+        }
+    }
+    xhr.send();
+ </script>   
+</body>
+</html>
