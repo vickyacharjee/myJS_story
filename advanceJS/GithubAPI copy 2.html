@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github API</title>
+</head>
+<body>
+    <h1>Displaying API content [name, followers, following] from api.github </h1>
+
+    <table style="text-align: center;" border="">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>followers</th>
+                <th>following</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="name"></td>
+                <td id="followers"></td>
+                <td id="following"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <form id="myForm">
+        <input type="text" id="inp" placeholder="Enter GitHub username">
+        <input value="check" type="submit"> 
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+
+            const username = document.getElementById('inp').value;
+            const reqUrl = `https://api.github.com/users/${username}`;
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', reqUrl);
+
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === 4 && xhr.status === 403) {
+                    console.log(xhr.readyState+"bb");
+                    const data = JSON.parse(xhr.responseText);
+                    status=data.status
+                    console.log(status);
+                    if (data.message==data.message) {
+                        document.getElementById('followers').innerHTML ="exceed the limit"
+                    }        
+                    const followers = data.followers;
+                    const following = data.following;
+                    const name = data.name;
+
+                  
+                    document.getElementById('following').innerHTML = following;
+                    document.getElementById('name').innerHTML = name;
+                }
+            }
+            xhr.send();
+        });
+    </script>   
+</body>
+</html>
