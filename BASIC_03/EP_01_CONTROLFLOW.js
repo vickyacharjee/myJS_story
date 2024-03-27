@@ -35,12 +35,11 @@
         if(name==undefined){
             console.log("its undefined");
             if (name===name) {
-                console.log("true");
-                
+                console.log(" yo its true ");
             }
         }
         else{
-            console.log("its defined");
+            console.log(" yo its its defined");
         }
 
         

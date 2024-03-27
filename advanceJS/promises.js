@@ -10,6 +10,9 @@ promiseOne.then(()=>{
     console.log("promise consumed");
 });
 
+
+
+
 // Other way of declaration
 console.log("********promiseTwo********");
 new Promise((resolve,reject)=>{
@@ -20,6 +23,8 @@ new Promise((resolve,reject)=>{
 }).then(()=>{
     console.log("promise part 2 consumed");
 })
+
+
 
 // Other way of declarig the promise but with accessing the parameter
 console.log("********promiseThree********");
