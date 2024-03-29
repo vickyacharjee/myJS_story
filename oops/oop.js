@@ -23,8 +23,11 @@ function UserDetails(userName, isLoggedIn, logInCount) {
     return this;
 }
 
-const userOne =  UserDetails('vicky', true, 2);
 
-const userTwo =  UserDetails('hello', false, 3);
+// in constuctor the new keyword is given to get the instance of this class or object literal
+// if new keyword is npt included then the new istance will not be created and remeber that object is stored at heap, so the main variable will be changed again and again so in order to prevent this use new keyword
+const userOne = new UserDetails('vicky', true, 2);
+const userTwo = new UserDetails('hello', false, 3);
+
 console.log(userOne);
 console.log(userTwo);
