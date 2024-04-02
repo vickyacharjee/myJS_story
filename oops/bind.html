@@ -18,8 +18,13 @@
             .addEventListener('click',this.handleClick
             .bind(this))
         }
- 
+        
         // simply in bind we can get accessed the constructor of a particular class 
+        // if someone is confused here is the summary , since we are calling this.handleClick and this here
+        //  is button as console.log(this) gives , so button do not have handleClick access 
+        // (that's why its coming as undefined ) , so we have to explicit bind this to the class context
+        //  (Which is React) to get the access.
+
         handleClick(){
             console.log("Button Clicked");
             console.log(this);
