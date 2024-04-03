@@ -37,3 +37,15 @@ arr3.forEach((element)=>{
 const ans=arr3.map((e)=>e*10)
 console.log(ans);
 console.log(pack);
+
+//testing the refrence with object
+const obj={
+    name:'vicky',
+    age:21
+}
+console.log(obj);
+obj={
+  name:'vickyAcharjee',
+  age:22
+}
+console.log(obj);

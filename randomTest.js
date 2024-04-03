@@ -30,3 +30,9 @@ console.log("length ",user3);
 const city = ["Manchester", "Liverpool"];
 const removedCity = city.pop();
 console.log(removedCity); // "Liverpool"
+
+const arr=['hi','this','vicky'];
+const arr2=arr;
+arr2[2]='vickyACharjee';
+console.log(arr2);
+console.log(arr);
