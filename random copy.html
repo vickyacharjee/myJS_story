@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button>Click</button>
+    
+
+    
+</body>
+<script>
+
+const button=document.querySelector('button');
+button.addEventListener('click',()=>{
+    let value=window.prompt("Enter an  number")
+    console.log(value);
+    let result=window.confirm("Shall i coonform dude?")
+    console.log(result);
+    if (result) {
+        value=parseInt(value);
+    window.alert(value+1)
+    }
+})
+
+
+</script>
+</html>

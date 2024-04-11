@@ -263,3 +263,136 @@ These are some of the keywords and methods commonly used when working with objec
 //     console.log('Unknown operating system');
 // }
 
+// let name= 'vicky';
+// if (name.startsWith('1ic')) {
+//   console.log('yo');
+// }
+// else{
+//   console.log('no');
+// }
+
+// console.log(x); // ReferenceError
+// const x = 3;
+
+
+
+// const myList = ["home", /* empty */, , "school", /* empty */, ];
+// console.log(myList);
+
+// const sales = "Toyota";
+
+// function carTypes(name) {
+//   return name === "Honda" || 'bmw' ? name : `Sorry, we don't sell ${name}.`;
+// }
+
+// const car = { myCar: "Saturn", //string 
+//               getCar: carTypes("bmw"), // func
+//               special: sales // variable
+//             };
+
+//     console.log(car.myCar); // Saturn
+//     console.log(car.getCar); // Honda
+//     console.log(car.special); // Toyota
+
+
+//   const car = { manyCars: { a: "Saab", 
+//                             b: "Jeep" 
+//                           },
+//                7: "Mazda" };
+
+//   console.log(car.manyCars.b); // Jeep
+//   console.log(car[7]); // Mazda
+
+
+//   const test={
+//     name:'vicky',
+//        7: 'seven'
+//   }
+
+//   console.log(test[7]);
+
+//   const name='vicky'
+
+//  try {
+//   // Code that may throw an exception
+//   const result = 10 / 1.1; // This will result in Infinity
+//   console.log(result); // This line will be executed
+// } catch (error) {
+//   // Code to handle the exception
+//   console.error("An error occurred:", error.message);
+// }
+
+// let bike='bmw'
+// switch (bike) {
+//   case 'honda':
+//     console.log('honda is relaible');
+//     break;
+//   case 'bmw':
+//    console.log('The best and the expensive one');
+//     break;
+//   // …
+//   default:
+//     console.log('bike not in my mind');
+// }
+
+// const name='vicky'
+// const res=name.split('');
+
+// console.log(res.join(','));
+
+// const currencyInINR=(dollar)=>{
+  
+// const arr=[1,2,3,4]
+
+// const dup=arr;
+// changeArrRefrence(arr);
+// console.log(dup);
+// console.log(arr);
+
+// function changeArrRefrence(arr) {
+//   arr[0]=14;
+// }
+
+
+// let a=12;
+// let b=a+12;
+
+// console.log(a);
+// console.log(b);
+
+// let x=5;
+
+// if (x=4) {
+//   console.log("success");
+// }
+// else{
+//   console.log("unsuccess");
+// }
+
+// let ans=5===5;
+// console.log(ans);
+// let five=5;
+// console.log(5==five);
+
+// console.log('hey there this is vicky acharjee and i am from class 12 B ');
+// const name='vicky';
+// console.log(name);
+
+
+
+
+// function outerFunction() {
+//   let outerVar = 'I am from the outer function';
+  
+//   function innerFunction() {
+//     console.log(outerVar);
+//   }
+  
+//   return innerFunction;
+// }
+
+// let closureExample = outerFunction();
+// closureExample(); 
+
+console.log(name);
+var name='vicky'

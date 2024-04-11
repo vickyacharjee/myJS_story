@@ -32,10 +32,7 @@
         })();
 
 
-        //arrow func()
-
-       const vic4= ()=>{
-            console.log("vic");
-        }
-
-        console.log(vic());
+        // IIFE passed somethin in parameter
+        (function call(name) {
+           console.log('Hi there IIFE with parameter called ',name);   
+        })('DB Connected')
