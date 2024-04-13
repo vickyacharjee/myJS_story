@@ -394,5 +394,9 @@ These are some of the keywords and methods commonly used when working with objec
 // let closureExample = outerFunction();
 // closureExample(); 
 
-console.log(name);
-var name='vicky'
+// console.log(name);
+// var name='vicky'
+
+setTimeout(()=>{
+console.log('call me after 2 sec');
+},2000)
