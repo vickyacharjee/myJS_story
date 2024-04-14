@@ -400,3 +400,6 @@ These are some of the keywords and methods commonly used when working with objec
 setTimeout(()=>{
 console.log('call me after 2 sec');
 },2000)
+setInterval(()=>{
+  console.log('Interval after 3 seconds');
+},3000)
