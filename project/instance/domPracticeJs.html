@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+</body>
+<script>
+  const root = document.createElement('div');
+  const child = document.createElement('div');
+root.innerHTML = 'test';
+child.innerHTML = 'child';
+root.style.backgroundColor = 'red';
+root.style.backgroundColor = 'orange';
+
+root.appendChild(child);
+document.body.appendChild(root);
+</script>
+</html>
