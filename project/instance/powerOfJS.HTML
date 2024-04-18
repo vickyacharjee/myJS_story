@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="clk"></div>
+    
+</body>
+<script>
+
+   const clk = document.getElementById('clk');
+   const button1=document.createElement('button');
+   const button2=document.createElement('button');
+   button1.id='start'
+   button2.id='stop'
+   
+   button1.innerHTML='start'
+   button2.innerHTML='stop'
+
+   clk.appendChild(button1)
+   clk.appendChild(button2)
+
+
+    let intervalID; // Define intervalID in a scope accessible to both event listeners
+
+    document.getElementById('start').addEventListener('click', () => {
+        intervalID = setInterval(() => {
+            clk.innerHTML = new Date().toLocaleString();
+        }, 1000);
+            document.getElementById('start').style.backgroundColor='red'
+            document.getElementById('stop').style.backgroundColor='white'
+    });
+
+    document.getElementById('stop').addEventListener('click', () => {
+        clearInterval(intervalID);
+            document.getElementById('start').style.backgroundColor='white'
+            document.getElementById('stop').style.backgroundColor='red'
+    });
+
+</script>
+</html>

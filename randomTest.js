@@ -397,9 +397,29 @@ These are some of the keywords and methods commonly used when working with objec
 // console.log(name);
 // var name='vicky'
 
-setTimeout(()=>{
-console.log('call me after 2 sec');
-},2000)
-setInterval(()=>{
-  console.log('Interval after 3 seconds');
-},3000)
+// setTimeout(()=>{
+// console.log('call me after 2 sec');
+// },2000)
+// setInterval(()=>{
+//  console.log(new Date().toLocaleString());
+
+// },3000)
+
+
+// console.log('test the name of the');
+// function namevicke(name2) {
+//   console.log('ok :)');
+// }
+
+// // namevicke();
+// let ans=namevicke;
+// console.log(typeof(ans));
+
+const obj2={
+  name:"vicky",
+  tellMe:function () {
+    console.log(`yo man ${this.name}`);
+  }
+}
+
+console.log(obj2.tellMe());
