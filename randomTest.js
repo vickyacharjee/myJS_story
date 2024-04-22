@@ -415,11 +415,93 @@ These are some of the keywords and methods commonly used when working with objec
 // let ans=namevicke;
 // console.log(typeof(ans));
 
-const obj2={
-  name:"vicky",
-  tellMe:function () {
-    console.log(`yo man ${this.name}`);
+// const obj2={
+//   name:"vicky",
+//   tellMe:function () {
+//     console.log(`yo man ${this.name}`);
+//   }
+// }
+
+// console.log(obj2.tellMe());
+
+
+// console.log(x === undefined); // true
+// var x = 3;
+
+// (function () {
+//   var x = "local value";
+//   console.log(x); // undefined
+// })();
+
+
+// console.log(x); // ReferenceError
+// const x = 3;
+
+// let y = 3;
+// console.log(y); // ReferenceError
+
+
+// console.log(name);
+// const name='vic'
+
+
+
+// console.log(x);
+// var x=0;
+
+
+// var naam='vic'
+// console.log(naam);
+// var naam='vic1'
+
+// if (true) {
+//    name2='vic'
+// }
+
+// console.log(name2);
+
+// yo='hello'
+// console.log(yo);
+
+
+// function name2() {
+//   console.log(x);
+//   var x='vic'
+//   console.log(x);
+// }
+
+// name2()
+
+// if (true) console.log('true') 
+// if (true) {
+//   console.log('true');
+//   console.log('he');
+// }
+
+// const objj={
+//   name:"vic",
+//   age:21,
+//   callMe:{
+//     callMeAnother:function (){
+//       console.log("hello");
+//     }
+//   }
+// }
+
+// objj.callMe.callMeAnother()
+  
+// let name='vicky'
+
+// {
+//   var name='vicky'
+//   console.log(name);
+// }
+
+if (true) {
+  if (false) {
+    
+  }
+  else{
+    console.log("printed me");
   }
 }
-
-console.log(obj2.tellMe());
