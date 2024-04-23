@@ -499,9 +499,13 @@ These are some of the keywords and methods commonly used when working with objec
 
 if (true) {
   if (false) {
-    
   }
-  else{
-    console.log("printed me");
+    else{
+      if (false) {
+        console.log("printed me");
+      }
+      else{
+        console.log("revived");
+      }
   }
 }
