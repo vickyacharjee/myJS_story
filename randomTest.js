@@ -497,15 +497,8 @@ These are some of the keywords and methods commonly used when working with objec
 //   console.log(name);
 // }
 
-if (true) {
-  if (false) {
-  }
-    else{
-      if (false) {
-        console.log("printed me");
-      }
-      else{
-        console.log("revived");
-      }
-  }
+
+function name() {
+  var name2='vicky'
 }
+console.log(name2);
