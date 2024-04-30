@@ -498,7 +498,22 @@ These are some of the keywords and methods commonly used when working with objec
 // }
 
 
-function name() {
-  var name2='vicky'
+
+if (true){
+ console.log('its true');
+ console.log('its true part two');
+ let x="name";
+ console.log(x);
 }
-console.log(name2);
+
+let x=123
+console.log(x);
+  
+
+const obj123={
+  name:'vic',
+  tellMe:function () {
+    console.log(this.name);
+  }
+}
+obj123.tellMe()
