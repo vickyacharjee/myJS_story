@@ -517,3 +517,13 @@ const obj123={
   }
 }
 obj123.tellMe()
+
+const testObj={
+  name:'vic',
+  logg:{
+     logMe:function () {
+      console.log("tested");
+     }
+  }
+}
+testObj.logg.logMe()
