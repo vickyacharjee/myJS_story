@@ -527,3 +527,11 @@ const testObj={
   }
 }
 testObj.logg.logMe()
+
+function f1() {
+  console.log("True");
+  return function f2() {
+    console.log("yes true");
+  }
+}
+f1()
