@@ -35,4 +35,12 @@
         // IIFE passed somethin in parameter
         (function call(name) {
            console.log('Hi there IIFE with parameter called ',name);   
-        })('DB Connected')
+        })('DB Connected');
+
+        
+        (function callMe(name) {
+            console.log("yes i am called",name);
+        })('called me');
+
+
+        // callMe()
