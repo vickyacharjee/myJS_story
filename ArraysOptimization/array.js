@@ -49,3 +49,4 @@ obj={
   age:22
 }
 console.log(obj);
+

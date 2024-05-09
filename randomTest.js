@@ -499,39 +499,42 @@ These are some of the keywords and methods commonly used when working with objec
 
 
 
-if (true){
- console.log('its true');
- console.log('its true part two');
- let x="name";
- console.log(x);
-}
+// if (true){
+//  console.log('its true');
+//  console.log('its true part two');
+//  let x="name";
+//  console.log(x);
+// }
 
-let x=123
-console.log(x);
+// let x=123
+// console.log(x);
   
 
-const obj123={
-  name:'vic',
-  tellMe:function () {
-    console.log(this.name);
-  }
-}
-obj123.tellMe()
+// const obj123={
+//   name:'vic',
+//   tellMe:function () {
+//     console.log(this.name);
+//   }
+// }
+// obj123.tellMe()
 
-const testObj={
-  name:'vic',
-  logg:{
-     logMe:function () {
-      console.log("tested");
-     }
-  }
-}
-testObj.logg.logMe()
+// const testObj={
+//   name:'vic',
+//   logg:{
+//      logMe:function () {
+//       console.log("tested");
+//      }
+//   }
+// }
+// testObj.logg.logMe()
 
-function f1() {
-  console.log("True");
-  return function f2() {
-    console.log("yes true");
-  }
-}
-f1()
+// function f1() {
+//   console.log("True");
+//   return function f2() {
+//     console.log("yes true");
+//   }
+// }
+// f1()
+
+const test=Math.floor(Math.random()*10+1)
+console.log(test);
