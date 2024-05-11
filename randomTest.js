@@ -536,5 +536,15 @@ These are some of the keywords and methods commonly used when working with objec
 // }
 // f1()
 
-const test=Math.floor(Math.random()*10+1)
-console.log(test);
+// const test=Math.floor(Math.random()*10+1)
+// console.log(test);
+
+// if (Math.floor(Math.random()*10+1)>5) {
+//   console.log('true');
+// }
+// console.log(x);
+// const x=1;
+
+var number=12;
+const number=10;
+console.log(number);
