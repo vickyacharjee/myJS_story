@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="data" type="text">
+    <button onclick="func()">checkKar</button>
+    
+</body>
+<script>
+    const buttons=document.getElementById('button');
+    
+    function func() {
+        let data=document.getElementById('data').value;
+        data=String(data)
+        if (data=="") {
+           console.log('bhai kuch likh bhi le');
+       }
+       else{
+           console.log('hello how may i help u');
+       }
+    }
+
+</script>
+</html>
