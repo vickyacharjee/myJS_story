@@ -49,10 +49,7 @@ String.prototype.trueLength=function (){
 
 name.trueLength()
 
-
-
-
-
 const exampleName=" hithisisvickyacharjee   "// why the trim was not working because the trim excludes all the spaces before or after the letter or word is completed
  console.log(typeof(exampleName));
 exampleName.trueLength();
+

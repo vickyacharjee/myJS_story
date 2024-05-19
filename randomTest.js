@@ -546,5 +546,6 @@ These are some of the keywords and methods commonly used when working with objec
 // const x=1;
 
 var number=12;
-const number=10;
+var number=10;
 console.log(number);
+
