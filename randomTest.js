@@ -545,7 +545,13 @@ These are some of the keywords and methods commonly used when working with objec
 // console.log(x);
 // const x=1;
 
-var number=12;
-var number=10;
-console.log(number);
+// var number=12;
+// var number=10;
+// console.log(number);
 
+
+const arr=['1',2]
+console.log(typeof(arr[0]));
+// console.log(typeof(arr));
+arr[2]=1
+console.log(arr);
