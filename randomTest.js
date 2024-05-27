@@ -550,8 +550,15 @@ These are some of the keywords and methods commonly used when working with objec
 // console.log(number);
 
 
-const arr=['1',2]
-console.log(typeof(arr[0]));
-// console.log(typeof(arr));
-arr[2]=1
-console.log(arr);
+// const arr=['1',2]
+// console.log(typeof(arr[0]));
+// // console.log(typeof(arr));
+// arr[2]=1
+// console.log(arr);
+
+Array.prototype.test=function () {
+  console.log('yo');
+}
+
+let arrr=[1,2];
+console.log(arrr.test());
