@@ -556,9 +556,20 @@ These are some of the keywords and methods commonly used when working with objec
 // arr[2]=1
 // console.log(arr);
 
-Array.prototype.test=function () {
-  console.log('yo');
-}
+// Array.prototype.test=function () {
+//   console.log('yo');
+// }
 
-let arrr=[1,2];
-console.log(arrr.test());
+// let arrr=[1,2];
+// console.log(arrr.test());
+
+let arrr=[1,2,'vicky',{num1:1,num2:2,num3:3}]
+console.log(typeof(arrr));
+
+console.log(typeof(arrr[1]));
+
+console.log(typeof(arrr[2]));
+
+console.log(typeof(arrr[3]));
+
+
