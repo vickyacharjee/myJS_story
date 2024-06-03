@@ -563,13 +563,19 @@ These are some of the keywords and methods commonly used when working with objec
 // let arrr=[1,2];
 // console.log(arrr.test());
 
-let arrr=[1,2,'vicky',{num1:1,num2:2,num3:3}]
-console.log(typeof(arrr));
+// let arrr=[1,2,'vicky',{num1:1,num2:2,num3:3}]
+// console.log(typeof(arrr));
 
-console.log(typeof(arrr[1]));
+// console.log(typeof(arrr[1]));
 
-console.log(typeof(arrr[2]));
+// console.log(typeof(arrr[2]));
 
-console.log(typeof(arrr[3]));
+// console.log(typeof(arrr[3]));
 
-
+for (let i = 0; i <1000; i++) {
+  if (i==2){
+    console.log("printed 2");
+    break;
+  }
+  
+}
