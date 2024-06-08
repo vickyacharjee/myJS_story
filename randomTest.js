@@ -572,9 +572,11 @@ These are some of the keywords and methods commonly used when working with objec
 
 // console.log(typeof(arrr[3]));
 
-const date= new Date();
-console.log(typeof(date));
+// const date= new Date();
+// console.log(typeof(date));
 
-console.log(date.getUTCDate());
+// console.log(date.getUTCDate());
+
+
 
 

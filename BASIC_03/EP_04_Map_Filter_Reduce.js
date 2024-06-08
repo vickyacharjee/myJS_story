@@ -278,3 +278,7 @@ const map3=myNum
             .filter((num)=>num>=61)//[ 61, 71, 81, 91 ]
 console.log(map3);
 
+
+const mOne=[1,2,3,2];
+const map=mOne.map((n)=>n*10)
+console.log(map);
