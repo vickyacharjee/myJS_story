@@ -279,6 +279,11 @@ const map3=myNum
 console.log(map3);
 
 
-const mOne=[1,2,3,2];
-const map=mOne.map((n)=>n*10)
+const mOne=[1,2,3,2,6];
+let map=mOne.map((n)=>n*10)
 console.log(map);
+
+
+map=mOne.map((n)=>n+12)
+console.log(map);
+
