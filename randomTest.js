@@ -579,4 +579,8 @@ These are some of the keywords and methods commonly used when working with objec
 
 
 
+let name="test"
+let name2="me"
+console.log(name+name2);
+
 

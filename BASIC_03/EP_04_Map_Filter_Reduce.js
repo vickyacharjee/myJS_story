@@ -271,19 +271,19 @@ console.log(map2);
 //its basically of having one method to anotehr cancatate using .
 //example of chaining is: variableName.map().map().filter().....
 
-const myNum3=[1,2,3,4,5,6,7,8,9];
-const map3=myNum
-            .map((num)=>num*10)// 10, 20, 30, 40, 50,60, 70, 80, 90
-            .map((num)=>num+1)//  11, 21, 31, 41, 51,61, 71, 81, 91
-            .filter((num)=>num>=61)//[ 61, 71, 81, 91 ]
-console.log(map3);
+// const myNum3=[1,2,3,4,5,6,7,8,9];
+// const map3=myNum
+//             .map((num)=>num*10)// 10, 20, 30, 40, 50,60, 70, 80, 90
+//             .map((num)=>num+1)//  11, 21, 31, 41, 51,61, 71, 81, 91
+//             .filter((num)=>num>=61)//[ 61, 71, 81, 91 ]
+// console.log(map3);
 
 
-const mOne=[1,2,3,2,6];
-let map=mOne.map((n)=>n*10)
-console.log(map);
+// const mOne=[1,2,3,2,6];
+// let map=mOne.map((n)=>n*10)
+// console.log(map);
 
 
-map=mOne.map((n)=>n+12)
-console.log(map);
+// map=mOne.map((n)=>n+12)
+// console.log(map);
 
