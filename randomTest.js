@@ -583,4 +583,9 @@ let name="test"
 let name2="me"
 console.log(name+name2);
 
+var i=1;
+for (let i = 12; i < 5; i++) {
+  console.log(i);
+
+}
 
