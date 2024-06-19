@@ -577,8 +577,6 @@ These are some of the keywords and methods commonly used when working with objec
 
 // console.log(date.getUTCDate());
 
-
-
 let name="test"
 let name2="me"
 console.log(name+name2);
@@ -586,6 +584,8 @@ console.log(name+name2);
 var i=1;
 for (let i = 12; i < 5; i++) {
   console.log(i);
-
 }
 
+(function () {
+  console.log("called me");
+})()
