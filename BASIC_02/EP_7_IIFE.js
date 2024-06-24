@@ -1,18 +1,11 @@
 
-
-   
-
-     
-       //IFFE function with basics 
+     //IFFE function with basics 
 
         function vic() {
             console.log("heyyy World");
         }
 
         vic();
-
-
-
 
      //Now invoke is done in IIFE
 
@@ -42,3 +35,7 @@
             console.log("yes i am called",name);
         })('called me');
         // callMe()
+
+
+        
+

@@ -577,15 +577,28 @@ These are some of the keywords and methods commonly used when working with objec
 
 // console.log(date.getUTCDate());
 
-let name="test"
-let name2="me"
-console.log(name+name2);
+// let name="test"
+// let name2="me"
+// console.log(name+name2);
 
-var i=1;
-for (let i = 12; i < 5; i++) {
-  console.log(i);
-}
+// var i=1;
+// for (let i = 12; i < 5; i++) {
+//   console.log(i);
+// }
 
-(function () {
-  console.log("called me");
-})()
+// (function (name) {
+//   console.log("called me"+name);
+// })('its called via function')
+
+
+let i=1;
+
+// let ans=++i;
+
+let ans=i++;
+// ans++;
+console.log(ans);
+
+
+
+
