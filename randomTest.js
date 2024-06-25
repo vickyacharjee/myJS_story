@@ -591,14 +591,20 @@ These are some of the keywords and methods commonly used when working with objec
 // })('its called via function')
 
 
-let i=1;
+// let i=1;
 
-// let ans=++i;
+// // let ans=++i;
 
-let ans=i++;
-// ans++;
+// let ans=i++;
+// // ans++;
+// console.log(ans);
+
+// le
+
+
+let arrr=[1,2,3,4];
+let arrr2=[5,6,7];
+let ans=arrr.concat(arrr2);
 console.log(ans);
 
-
-
-
+console.log(ans.length);
