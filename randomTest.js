@@ -602,9 +602,36 @@ These are some of the keywords and methods commonly used when working with objec
 // le
 
 
-let arrr=[1,2,3,4];
-let arrr2=[5,6,7];
-let ans=arrr.concat(arrr2);
-console.log(ans);
+// let arrr=[1,2,3,4];
+// let arrr2=[5,6,7];
+// let ans=arrr.concat(arrr2);
 
-console.log(ans.length);
+// console.log(ans);
+// console.log(ans.length);
+
+
+// fetch('https://api.github.com/users/vickyacharjee')
+// .then((res)=>{
+//     return res.json();
+// })
+// .then((data)=>{
+//     console.log(data);
+// })
+
+  
+// Simplified code
+
+let task;
+
+fetch('https://api.github.com/users/vickyacharjee')
+  .then(response => response.json())
+  .then((data) => {
+    task=data;
+    console.log(task.name);
+    console.log(`${task.name} follower is ${task.followers}`);
+
+  })
+  .catch(error => console.error('Error:', error));
+
+  
+
