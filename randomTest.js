@@ -619,19 +619,32 @@ These are some of the keywords and methods commonly used when working with objec
 // })
 
   
-// Simplified code
+// // Simplified code
 
-let task;
+// let task;
 
-fetch('https://api.github.com/users/vickyacharjee')
-  .then(response => response.json())
-  .then((data) => {
-    task=data;
-    console.log(task.name);
-    console.log(`${task.name} follower is ${task.followers}`);
+// fetch('https://api.github.com/users/vickyacharjee')
+//   .then(response => response.json())
+//   .then((data) => {
+//     task=data;
+//     console.log(task.name);
+//     console.log(`${task.name} follower is ${task.followers}`);
 
-  })
-  .catch(error => console.error('Error:', error));
+//   })
+//   .catch(error => console.error('Error:', error));
 
-  // 
+// let name="123"
+// // console.log(typeof(name));
+// let nameTwo=String(name)
+// console.log(name);
+// console.log(typeof(nameTwo));
 
+let vicObj={
+  name:"vicky",
+  age:21
+}
+let {name,age}=vicObj;
+console.table([name,age]);
+vicObj=null;
+console.log(vicObj);
+console.log(typeof vicObj);

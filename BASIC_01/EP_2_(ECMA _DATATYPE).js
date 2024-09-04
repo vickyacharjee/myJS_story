@@ -1,18 +1,51 @@
 
-    
+    "use strict"; // treat all JS code as newer version
+
+// alert( 3 + 3) // we are using nodejs, not browser
+
+console.log(3 
+    +
+     3) // code readability should be high
+
+console.log("Hitesh")
+
+
+let name = "hitesh"
+let age = 18
+let isLoggedIn = false
+let state;
+
+// number => 2 to power 53  type is number
+// bigint type is bugint
+// string => "" type is string
+// boolean => true/false type is boolean
+// null => standalone value type is object
+// undefined => tye is undefined
+// symbol => unique type is symbol
+
+
+// object
+
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object
 
    
 //    let a="vic"; //its an String
 //    let b=123; //its an integer
 //    let c=true; //its boolean
 //    let d=null;// its null and if we will console out then it will display as an NULL
-//    let e=undefined; //its an undefined if we console out then
+//    let e=undefined; //its an undefined if we console out then it will display undefined
+
+// NULL is a dataType which means variable has nothing 
+// undefined is a variable which has not been assigned any value, but the memory space has been reserved
+// let e=undefined; //its an undefined if we console out then it will display undefined
+
 
 //     console.log(e);
 //     console.log(d);
 
 
-    // now we iwll check its type
+    // now we wll check its type
 
     // console.log(typeof(a));
     // console.log(typeof(b));
@@ -48,6 +81,8 @@ console.log(isnum);
 // let ln=String(stringN);
 // console.log(ln);
 // console.log(typeof(ln));
+
+
 
 
 

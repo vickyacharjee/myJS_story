@@ -1,0 +1,156 @@
+
+--let,var,const
+
+const is very staraight forward meaning thats once the value is been declared then it cant be changed further on.
+
+var is a bit tricky it can be changed anytime, the state changes and it reflects to all the all the variable with same name. 
+This was the major issue using var.
+
+let is similar to var but it has one difference it cant be changed once it is declared.
+** let resolves this issue via scoping
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+-- DataType and Ecma
+// number => 2 to power 53  type is number
+// bigint type is bugint
+// string => "" type is string
+// boolean => true/false type is boolean
+// null => standalone value type is object
+// undefined => tye is undefined
+// symbol => unique type is symbol
+
+undefined
+Type: undefined is its own primitive type.
+Meaning: It indicates that a variable has been declared but has not yet been assigned a value. It is also the default return value of functions that don't explicitly return something.
+When to Use: Typically, you don't explicitly assign undefined to a variable. It's mainly used by JavaScript internally or to check if a variable has been initialized.
+
+null
+Type: null is an object (this is a quirk in JavaScript).
+Meaning: It represents the intentional absence of any object value. It's often used to indicate that a variable should have no value.
+When to Use: You can assign null to a variable when you want to explicitly indicate that it should be empty or have no value.
+example: clearing the object value
+         let obj={
+            name:"John",
+            age:21
+         }
+         obj=null;  // here we can observe that the object is ben cleared
+
+         another example is:
+         take tempearure as an example, if by chance the temperature is reset then 0 cant be the reset value since 0 is considered as a temperature value so here instead we use NULL
+ 
+ ***  "use strict"; // treat all JS code as newer version       
+
+--------------------------------------------------------------------------------------------------------------------------------
+--DataType Conversion
+Boolean Conversion:
+    1=>true, 0=>false
+    null=>false
+    undefined=>false
+    NaN=>false
+    ""=>false
+    []=>false
+    {}=>false
+    1.0=>true
+    -1=>true //important
+    -0=>false
+    -1.0=>true
+
+Number to string:
+    let someNumber=14
+    let someNumberString=string(someNumber)
+    console.log(someNumberString) //14 ** we can see that the number is shown as same as 14 but actually it has been converted as to string, prven via checking its type
+    console.log(typeof someNumberString) // shows as String
+
+String to number:
+    let someString="14"
+    let someNumber=Number(someString)
+    console.log(someNumber) //14
+    console.log(typeof someNumber) // shows as Number
+    let someString="14.5"
+    let someNumber=Number(someString)
+    console.log(someNumber) //14.5
+
+--------------------------------------------------------------------------------------------------------------------------------
+--Operations:
+    // *********************** Operations ***********************
+
+let value = 3
+let negValue = -value
+console.log(negValue);
+
+console.log(2+2);
+console.log(2-2);
+console.log(2*2);
+console.log(2**3);
+console.log(2/3);
+console.log(2%3);
+
+let str1 = "hello"
+let str2 = " hitesh"
+
+let str3 = str1 + str2
+// console.log(str3);
+
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log("1" + 2 + 2); 
+// console.log(1 + 2 + "2");
+
+// console.log( (3 + 4) * 5 % 3);
+
+// console.log(+true);
+// console.log(+"");
+
+let num1, num2, num3
+
+num1 = num2 = num3 = 2 + 2
+
+let gameCounter = 100
+++gameCounter;
+console.log(gameCounter);//101
+
+    Rules of conversion:
+// consversion with substarction ** substarction doesnt bothered about any string it does its operation as usual
+let n1 = 10
+let n2 = "5"
+
+console.log("substarction"); 
+console.log(n1-n2); //5
+console.log(n2-n1); //-5
+
+console.log("Addition"); ** Addition has an condition, if 2 consecutive values will be taken then it always concantate the strings, wheresas if more than two values will be taken then it uses a precedence rule which means it checks the first value if its string then the whole concantetation will be done as string, if number then simple addition will take place
+console.log(n1+n2); //105
+console.log(n2+n1); //510
+
+console.log("Addition with 3 value");
+console.log("2"+1+1); //211 // iif string starts first then simple do all concantetaion
+console.log(2+1+"1"); //31 // if num starts then simple addition takes place excluding string... that only concantates
+
+console.log("substraction with 3 value");
+console.log("2"-1-1); //0
+console.log(2-1-"1"); //0
+
+console.log("Multiplication conversion"); // Multiplication works the same as substraction
+console.log("5"*2); //10
+console.log(5*"2"); //10
+
+console.log("5"*2*"10"); //100
+console.log(5*"2"*10); //100
+
+console.log("Division conversion"); // division works the same as multipliacion and substraction
+console.log("5"/2); //2.5
+console.log(5/"2"); //2.5
+
+console.log("5"/2/"5"); //0.5
+console.log(5/2/"5"); //0.5
+
+
+
+
+
+
+
+
+
+
