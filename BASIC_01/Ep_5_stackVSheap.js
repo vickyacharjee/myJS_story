@@ -30,36 +30,47 @@ let a={
 // console.log(name);
 // console.log(name2);
 
-let user1={
+// let user1={
+//     name:"vicky",
+//     age:21,
+//     address:"shillong"
+// }
+
+// console.log(user1);// Here this was printing pure user1 value
+
+// let user2=user1;
+
+// user2.age=22;
+// user2.address="Bengaluru";
+
+// console.log(user2);
+// console.log(user1);//Here this was printing pure user1 value but with the updated on since its allocation memory in heap is changed
+
+// const myObj={
+//     name:'vicky_Acharjee',
+//     age:21,
+//     address:'BLR'
+// }
+
+
+// //Destructue with the same passed obj name
+// const{name:n}=myObj;
+// const{name,age,address}=myObj;
+// console.log(name);
+// console.log(age);
+// console.log(address);
+
+// //Destructure individually with user Wished NAme
+// console.log(n);
+
+// second tiem practice
+let  userOne={
     name:"vicky",
     age:21,
-    address:"shillong"
 }
 
-console.log(user1);// Here this was printing pure user1 value
-
-let user2=user1;
-
-user2.age=22;
-user2.address="Bengaluru";
-
-console.log(user2);
-console.log(user1);//Here this was printing pure user1 value but with the updated on since its allocation memory in heap is changed
-
-const myObj={
-    name:'vicky_Acharjee',
-    age:21,
-    address:'BLR'
-}
-
-
-//Destructue with the same passed obj name
-const{name:n}=myObj;
-const{name,age,address}=myObj;
-console.log(name);
-console.log(age);
-console.log(address);
-
-//Destructure individually with user Wished NAme
-console.log(n);
+let userTwo=userOne
+userTwo.name="legend"
+userTwo.age=22
+console.log("name",userOne.name," age",userOne.age);
 

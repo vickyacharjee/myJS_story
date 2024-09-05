@@ -144,6 +144,148 @@ console.log(5/"2"); //2.5
 
 console.log("5"/2/"5"); //0.5
 console.log(5/2/"5"); //0.5
+// -------- comaprison operator------------
+console.log(2>"1");// it actually works return as true
+console.log(2>"2");// it actually works return as false
+
+console.log(2=="2"); //true
+console.log(2==="2"); //false
+
+console.log(null>0); //false
+console.log(null<0); //false
+console.log(null>=0); // true ** The reason console.log(null >= 0) returns true is because of how JavaScript handles comparisons involving null. When null is compared to a number using operators like >= or <=, it is treated as if it were 0. This is known as type coercion, where JavaScript tries to convert the values to a compatible type for the comparison.
+
+console.log(undefined>0); //false
+console.log(undefined<0); //false
+console.log(undefined>=0); //false
+// ** Since undefined is not 0, undefined is the absence of value, since the memory/spac is been allocated in the memory itself
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+--DataType Summary:
+        In jsavaScript there are two type of DataType:
+        1. Primitive DataType (passed by value)
+        2. Non-Primitive DataType (passed by refrence)
+
+    primitive values: => DataType
+    1. Number    =>number
+    2. String    =>String
+    3. Boolean   =>boolean
+    4. Null      =>object
+    5. Undefined =>undefined
+    6. Symbol    => Symbol
+    7. BigInt    =>BigInt
+
+    non-primitive:
+    1. Array    =>object
+    2. Object   =>object
+    3. Function =>function **very imporatnt** 
+                   function name() {
+                    console.log("yo world");
+                   }
+                   console.log(typeof name()); //The reason console.log(typeof name()); shows undefined instead of a type is because the name function doesn't explicitly return a value. In JavaScript, if a function doesn't return a value, it defaults to returning undefined
+                   console.log(typeof name); //this is the corect approach 
+
+                    function name2() {
+                    return 1
+                    }
+                    console.log(typeof name2()); // here we can observe that it return one since we have statically reaturn type as numb  
+
+--------------------------------------------------------------------------------------------------------------------------------
+--Stack VS Heap:
+Stack: (primitive datatype)           
+1. It is a LIFO (Last In First Out) data structure
+2. It is used for storing local variables, function arguments, return values, and function calls
+3. It is a memory space that is allocated and deallocated automatically by the JavaScript engine
+4. It is faster and more efficient than the heap
+5. It is used for storing primitive values and non-primitive values that are passed by value
+6. It is not accessible directly from JavaScript code
+
+Example:
+    let name="vicky"
+    console.log(name)//vicky
+    let nameTwo=name
+    console.log(nameTwo)//vicky
+
+Heap: (NON-PRIMITIVE)
+1. It is a dynamic memory allocation system
+2. It is used for storing objects, arrays, and other non-primitive values that are passed
+3. It is a memory space that is allocated and deallocated manually by the JavaScript engine
+4. It is slower and less efficient than the stack
+5. It is used for storing non-primitive values that are passed by reference
+6. It is accessible directly from JavaScript code
+7. It is used for storing objects, arrays, and other non-primitive values that are passed
+
+Example:
+    let userOne={
+        name:"vicky",
+        age:21
+    }
+    console.log(userOne.name)// vicky
+    console.log(userOne.age) //21
+
+    let userTwo=userOne
+    userTwo.name="legend"
+    userTwo.age="22"
+    console.log(userOne.name)// vicky
+    console.log(userOne.age) //21
+    ** jsut the refrence had been passed, not the copy of the variable
+
+--------------------------------------------------------------------------------------------------------------------------------
+--String:
+1. Strings are immutable in JavaScript
+2. Strings are primitive data types
+3. Strings are used for storing text data
+4. Strings are used for concatenation, slicing, and other string operations
+5. Strings are used for regular expressions
+6. Strings are used for template literals
+7. Strings are used for string interpolation
+
+** Two way of declaring string is:
+1. let name="Hello from first string" // the simple and the best approach
+2. let name=new String("Hello from second string")
+
+let string ="vickyacharjee"
+let s=stringTwo=" vicky acharjee"
+
+    // prototype
+        // toUpperCase
+        console.log( string.toUpperCase()); //VICKYACHARJEE
+
+        // toLowerCase
+        console.log(string.toLowerCase()); //vickyacharjee
+        // charAt
+        console.log(string.charAt(2)); // c
+        // indexOf
+        console.log(string.indexOf('a')); // 5 ** one thing might be wondering in ur mind, if i have the same letter, occuring multiple time in a string... it simply returns the first letter as using precedence rulefrom lef to right
+        // lastIndexOf
+        console.log(string.lastIndexOf('a')); // 5 ** same as index of only but it uses precedence rule from left to right
+
+        // trim
+        console.log(stringTwo.trim()); // vickyacharjee
+
+        // trimLeft
+        console.log(stringTwo.trimLeft()); // vickyacharjee **trims only from the left
+
+        // trimRight
+        console.log(stringTwo.trimRight()); // vicky acharjee **trims only from the right
+
+        // split
+        console.log(stringTwo.split(' ')); // ['vicky', 'acharjee'] **splits it into an array as per ur desired, just via providing which to split here in our case we used split(" ")...that means it it spliting into an array via checking through array
+
+        //substring
+        console.log(string.substring(0,2)); 
+
+        //slice ** works very similar to substring, but the extra added feature is it can starts from reverse too... which basically starts from -1 and goes upto
+        let exampleSlice=string.slice(-3,-1) // we can observe it using reserve order
+        console.log(exampleSlice);
+
+        // replaceWith
+        console.log(stringTwo.replace('vicky', 'vickyacharjee'));  // vickyacharjee acharjee
+
+
+            
+
 
 
 
