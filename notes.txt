@@ -400,6 +400,17 @@ let min=10
 let max=20
 console.log(Math.floor(Math.random()*(max-min+1)+min));
 
+**Important**
+const num=new Number(12)
+console.log(typeof num); // its type is object since we used new keyword above while declaring so it created a number constructor
+num.a="vick"
+console.log(num); // [Number: 12] { a: 'vick' }
+
+        Here's what's happening:
+
+        [Number: 12] is the internal representation of the num object, indicating that it's a Number object with an internal value of 12.
+        a: 'vick' is the additional property you added to the num object, with key a and value "vick".
+
 --------------------------------------------------------------------------------------------------------------------------------
 -- Time and Date:
 // Date is a predefined JS library
@@ -435,12 +446,139 @@ dateTwo.toLocaleString('default',{
 })
 console.log(dateTwo); //2024-09-06T10:25:52.033Z
 
+--------------------------------------------------------------------------------------------------------------------------------
+-- Property VS prototype
+In JavaScript, property and prototype are two related but distinct concepts.
+
+Property: A property is a key-value pair that is associated with an object. It's a way to attach a value to an object using a specific key or name. Properties can be thought of as variables that are attached to an object. For example:
+
+    Example:
+    const person = { name: 'John', age: 30 };
+    In this example, name and age are properties of the person object.
+
+Prototype: A prototype, on the other hand, is an object that is used as a blueprint or a template for creating other objects. When you create an object, it inherits properties and behavior from its prototype. In JavaScript, every object has a prototype, which is an internal reference to another object.
+
+Here's an example:
+
+    Example:
+    function Animal() {}
+    Animal.prototype.sound = function() { console.log('The animal makes a sound.'); };
+
+    const dog = new Animal();
+    dog.sound(); // Output: The animal makes a sound.
+    In this example, Animal is a constructor function, and Animal.prototype is the prototype object. The sound method is a property of the prototype object. When we create a new object dog using the Animal constructor, it inherits the sound method from the prototype.
+
+Key differences:
+A property is a key-value pair attached to an object, while a prototype is an object that serves as a blueprint for creating other objects.
+Properties are specific to an object, while a prototype is shared among multiple objects.
+Properties are typically used to store data, while prototypes are used to define behavior and inheritance.
+Would you like me to elaborate on this topic or provide more examples?
+
+--------------------------------------------------------------------------------------------------------------------------------
+--Array:
+
+JavaScript arrays are a type of object that can store multiple values of any data type. 
+Here are some key points about JavaScript arrays:
+1. Arrays are zero-indexed, meaning the first element is at index 0.
+2. Arrays can store values of any data type, including strings, numbers, booleans, objects.
+3. Arrays can be created using the array literal syntax
+4. Arrays can be created using the Array constructor
+5. Arrays have several built-in methods for manipulating and accessing their elements.
+6. Arrays can be iterated over using a for loop or the forEach method.
+7. Arrays can be sliced and spliced to add or remove elements.
+8. Arrays can be sorted and reversed.
+9. Arrays can be used as a stack or a queue.
+10. Arrays can be used to store and manipulate large amounts of data.
+Here are some examples of array methods:
+Example:
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.push(6); // adds 6 to the end of the array
+numbers.pop(); // removes the last element from the array
+numbers.shift(); // removes the first element from the array
+numbers.unshift(0); // adds 0 to the beginning of the array, the bigegst flaws of using unshift is it changes the index alignment
+numbers.indexOf(3); // L ot R returns the index as  2, if not present then, it results as -1 always
+numbers.lastIndexOf(3); // R to L returns the index of the last occurrence of idex postion as 2
+numbers.includes(3); // returns true if 3 is in the array, false otherwise //boolean as reults
+numbers.join(','); // returns a string as datatype, containing all elements of the array, separated by commas ....note not only comma it can return variety such as , . : { } [] () * etc etc
+
+    slice and splice:
+         //slice 
+         const array=[1,2,3,4,5]
+         console.log(array); //[1,2,3,4,5]
+         const sliceArray=array.slice(1,3)
+         console.log(sliceArray); //[2, 3] // it basically extracts the 1 step lees than the given range
+         console.log(array); //[1,2,3,4,5] // we can observe that there is not change in the amin array variable
+
+        //splice
+        const array=[1,2,3,4,5]
+        console.log(array); //[1,2,3,4,5]
+        const spliceArray=array.splice(1,3)
+        console.log(spliceArray); //[2, 3, 4] // generally for the sake of sying it gives the until the last specified range specified by the user
+        console.log(array); //[1, 5] // we can observe that there is a change in the main root array.... ***IMPORTANT*** Mark it that, any changes made on the leaf array via splice, then it directly reflects to the root array
+
+    Array: part 2 (array mainpulation)
+     // issue with push()
+    const myArr1=[1,2,3,4,5]
+    const myArr2=[6,7,8,9,10]
+    myArr1.push(myArr2)
+    console.log(myArr1) //[ 1, 2, 3, 4, 5, [ 6, 7, 8, 9, 10 ] ] we cam observe that whole myArr2 is taken as as element of myArr1 :: this whole [ 6, 7, 8, 9, 10 ] is taken as 6th lement as myArr1 
+    // so inorder to acces the elemnt 7: 
+    console.log(myArr1[5][1])
+
+
+    // issue with concat() // the diffrence makes here from push() is  in concat we need to store to another variable for displaying unlike in push() we can directly access without taking new variable
+    const myArr1=[1,2,3,4,5]
+    const myArr2=[6,7,8,9,10]
+    const result=myArr1.concat(myArr2)
+    console.log(result[7]) 
+    // Note: concat() is the best appraoch among 2 since, it concantate exactly at the end of new array at the last of previous one
+
+    // Alternate to concat() is using spread operator, since in mordern code we see this alot:)  
+    const myArr1=[1,2,3,4,5]
+    const myArr2=[6,7,8,9,10]
+    const result=[...myArr1,...myArr2] // we can even add more array to it
+    console.log(result); //[1,2,3,4,5,6,7,8,9,10]
+
+    // complex nested array
+    const ar1 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+    console.log(ar1[2][2][2][1]); // outputs 10
+
+    // using via flat all the nested array becomes an consecutive individual element
+    const result=ar1.flat(Infinity)
+    console.log(result); [1,2,3,4,5,6,7,8,9,10]
+
+    // isArray => if variable is array then, returns as True else False
+    const vicky=[1,2]
+    const acharjee=1;
+    console.log(Array.isArray(acharjee)); //false
+    console.log(Array.isArray(vicky)); //false
+
+    //from method
+    const res=Array.from("vicky")
+    console.log(res); // converts string into array element as : [ 'v', 'i', 'c', 'k', 'y' ]
+
+    // from as object
+    const obj={name:"vicky",age:25}
+    const res2=Array.from(obj)
+    console.log(res2); // outputs as error
+
+    // of method
+    let score1=100
+    let score2=200
+    let score3=300
+    console.log(Array.of(score1,score2,score3)); //[ 100, 200, 300 ] //of operator adds all the variable in a single array one by one
+
+
+
+
+
+
+
 
 
 
             
-
-
 
 
 
