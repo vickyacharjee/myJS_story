@@ -30,22 +30,91 @@
             name:"vicky_acharjee",
             class: 'btch'
         }
-        console.log(a.name);
+        // console.log(a.name);
 
 
         //via destructure
         let {name:vic}=a;
         // console.log(name);//if we suppose uncomment and run then it will throw an error since its name priority is given as "vic"
 
-        console.log(vic);
-
-        
+        // console.log(vic);
         // console.log(user);
 
-       
+        //-----------second part-----------
+
+        // Objects 
+        //SingleTon
+        //Object Literals
+
+        // way to create Objects
+        //1. Object Literal
+        let obj1={
+            name:"vicky",
+            class:"btch"
+            }
+            // ** NOTE: all the key in objects are acceprted as string, if in genral we declare it normal variable then also internally it converts and accept as String
+            // There are two ways to access objects
+            //1. Dot Notation
+            // console.log(obj1.name);// vicky
+            //2. Bracket Notation
+            // console.log(obj1['name']);// vicky
+            //  ** NOTE: . notation is kinda new approach where as, using square brackets used as main scenario approach
+            //  ** NOTE: we can use bracket notation with variables also
+            //  ** NOTE: if we need  valid reason of maiking squate braces much added advantages from . notation is:
+
+            // creation of symbol variable
+            let symbol=Symbol("keyOne")
+            // creating new object for symbol example
+            const mySym={
+               "vic Name":"vicky",
+                age:21,
+                [symbol]:"thisIsKey"
+            }
+            // log using . notation
+            // console.log(mySym.symbol)// thisIsKey
+            // So using dot notation we got the result but partially since ithis is not the correct approach 
+
+            // log using bracket notation
+            // console.log(mySym[symbol])// thisIsKey ** correct approach
+
+            //another very very imporatnt this is, if bychnace the key in object is within string manually " " then there is no chace for accessing using dont notation, there we need to use [] braces
+            // Example taking the same object from above
+            
+            // with dot notation
+            // console.log(mySym.vic name);// throws an error since there should be no space in variable naming
+            // with bracket notation
+            // console.log(mySym["vic name"]);// vicky.... since using [] we can access by embedding it into a string
+
+            // Freezing an object
+            // const obj2={
+            // name:"vicky",
+            // age:21
+            // }
+            // obj2.name="vicky-acharjee"
+            // console.log(obj2.name); // vicky-acharjee
+            // // now we will freeze
+            // Object.freeze(obj2)
+            // obj2.name="vicky-acharjee-2"// no changes had been made here since the obj2 has already been freezed
+            // console.log(obj2.name); //// vicky-acharjee
+
+
+             const funobj={
+                name:"vicky",
+                greet:function(){
+                    console.log("hey there everyone");
+                },
+                greet2:()=>{
+                    console.log("hey from arrow functions");
+                },
+                greet3(){
+                    console.log("hey from "+this.name)
+             }
+            }
+             console.log(funobj.greet);
+             funobj.greet2();
+             funobj.greet3();
 
 
 
-
-
+           
 

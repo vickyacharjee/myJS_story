@@ -483,6 +483,29 @@ Here are some key points about JavaScript arrays:
 2. Arrays can store values of any data type, including strings, numbers, booleans, objects.
 3. Arrays can be created using the array literal syntax
 4. Arrays can be created using the Array constructor
+    
+    Example 1: Creating an empty array
+        let arr = new Array();
+        console.log(arr);  // Output: []
+        Example 2: Creating an array with a specific number of empty slots
+        If you pass a single numeric argument to the Array constructor, it creates an array with that number of empty slots.
+
+    Exmaple 2: Creating an array and reserving 3 empty items spaces   
+        let arr = new Array(3);
+        console.log(arr);  // Output: [ <3 empty items> ]
+        Example 3: Creating an array with initial values
+        You can pass multiple arguments to the Array constructor to create an array with the specified values.
+
+    Example 3: creating and declaring an array
+        let arr = new Array(1, 2, 3);
+        console.log(arr);  // Output: [1, 2, 3]
+        
+        Note:
+        It's generally more common to use the array literal syntax ([]) instead of the Array constructor due to its simplicity and clarity.
+            Example:
+            let arr = [1, 2, 3];
+            console.log(arr);  // Output: [1, 2, 3]
+
 5. Arrays have several built-in methods for manipulating and accessing their elements.
 6. Arrays can be iterated over using a for loop or the forEach method.
 7. Arrays can be sliced and spliced to add or remove elements.
@@ -569,7 +592,126 @@ numbers.join(','); // returns a string as datatype, containing all elements of t
     let score3=300
     console.log(Array.of(score1,score2,score3)); //[ 100, 200, 300 ] //of operator adds all the variable in a single array one by one
 
+--------------------------------------------------------------------------------------------------------------------------------
+--Objects: 
+    // An object is an important topic in jsavaScript
+    // An object is a collection of key-value pairs
+    // An object is a collection of properties
+    // An object is a collection of methods
+    // An object is a collection of Functions
+    // An object is a collection of variables
+    // An object is a collection of data
+    // An object is a collection of information
+    
+        //SingleTon
+        //Object Literals
 
+        // way to create Objects
+        //1. Object Literal
+        let obj1={
+            name:"vicky",
+            class:"btch"
+            }
+            // ** NOTE: all the key in objects are acceprted as string, if in genral we declare it normal variable then also internally it converts and accept as String
+            // There are two ways to access objects
+            //1. Dot Notation
+            // console.log(obj1.name);// vicky
+            //2. Bracket Notation
+            // console.log(obj1['name']);// vicky
+            //  ** NOTE: . notation is kinda new approach where as, using square brackets used as main scenario approach
+            //  ** NOTE: we can use bracket notation with variables also
+            //  ** NOTE: if we need  valid reason of maiking squate braces much added advantages from . notation is:
+
+            // creation of symbol variable
+            let symbol=Symbol("keyOne")
+            // creating new object for symbol example
+            const mySym={
+               "vic Name":"vicky",
+                age:21,
+                [symbol]:"thisIsKey"
+            }
+            // log using . notation
+            console.log(mySym.symbol)// thisIsKey
+            // So using dot notation we got the result but partially since ithis is not the correct approach 
+
+            // log using bracket notation
+            console.log(mySym[symbol])// thisIsKey ** correct approach
+
+            //another very very imporatnt this is, if bychnace the key in object is within string manually " " then there is no chace for accessing using dont notation, there we need to use [] braces
+            // Example taking the same object from above
+            
+            // with dot notation
+            console.log(mySym.vic name);// throws an error since there should be no space in variable naming
+            // with bracket notation
+            console.log(mySym["vic name"]);// vicky.... since using [] we can access by embedding it into a string
+    
+    // Freezing an object
+            // ** NOTE: we can freeze an object using Object.freeze() method
+            // any cahneges made after the declaration of freeze method, will not make anychanges further on
+            const obj2={
+            name:"vicky", // type string
+            age:21, //type string
+            isLoggedIn:true, //type boolean
+            counLogSession:["monday","wednesday"], //type array
+            }
+            obj2.name="vicky-acharjee"
+            console.log(obj2.name); // vicky-acharjee
+            // now we will freeze
+            Object.freeze(obj2)
+            obj2.name="vicky-acharjee-2"// no changes had been made here since the obj2 has already been freezed
+            console.log(obj2.name); // vicky-acharjee                         
+
+    // Methods or Function in objects:
+        let myObj={
+            name:"vicky"
+            greet:function(){
+                console.log("Hey there everyone")
+            }
+        }
+        myObj.greet()// Hey there everyone
+    
+    // we can also define methods using arrow functions
+        let myObj2={
+            name:"vicky",
+            greet:()=>{
+                console.log("Hey there everyone from arrow functions")
+            }
+        }
+        myObj2.greet()// Hey there everyone from arrow functons
+
+    // using this method,
+    // using this method we ill be accessible to get any refrence from the object
+    // Example
+        let thisObj={
+            name:"vicky",
+            greet:function(){
+                console.log("hi "+this.vicky) // here we used as this to get the refrence from the object
+            }
+        }
+    // NOTE: *** Very Very important, using arrow functions we are accessed to use .this keyword... it will throw an error 
+
+                all functons line up:
+                const funobj={
+                name:"vicky",
+                greet:function(){
+                    console.log("hey there everyone");
+                },
+                greet2:()=>{
+                    console.log("hey from arrow functions");
+                },
+                greet3(){
+                    console.log("hey from "+this.name)
+             }
+            }
+             console.log(funobj.greet()); // noob approach
+             funobj.greet2();
+             funobj.greet3();
+        //Note:
+        if we will console.log() only the function name, not using() then,
+        it will return the function itself, not the output of the function
+        Example:
+        console.log(funobj.greet); // it will return function 
+        // this: [Function: greet]
 
 
 
