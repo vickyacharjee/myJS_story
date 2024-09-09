@@ -693,6 +693,9 @@ numbers.join(','); // returns a string as datatype, containing all elements of t
                 console.log("hi "+this.vicky) // here we used as this to get the refrence from the object
             }
         }
+       ** What is the purpose of the “this” keyword in JavaScript?
+       ** The this keyword refers to the object that is executing the current function or method.
+          It allows access to object properties and methods within the context of that object
     // NOTE: *** Very Very important, using arrow functions we are accessed to use .this keyword... it will throw an error 
 
                 all functons line up:
@@ -718,6 +721,36 @@ numbers.join(','); // returns a string as datatype, containing all elements of t
         console.log(funobj.greet); // it will return function 
         // this: [Function: greet]
 
+--------------------------------------------------------------------------------------------------------------------------------
+--Difference between between function and method:
+
+In JavaScript, the terms "function" and "method" are often used interchangeably, but there is a subtle difference between them.
+
+Function: A function is a block of code that can be called multiple times from different parts of your program. 
+          It is a self-contained piece of code that takes in arguments, executes a set of statements, and returns a value. 
+          Functions are not part of an object and are defined independently.
+            //Example
+            function add(x, y) {
+            return x + y;
+            }
+
+Method: A method is a function that is part of an object.
+        It is a function that is defined inside an object and is used to perform an action on that object.
+        Methods are called on an instance of an object, and they have access to the object's properties and other methods.
+            //Example
+            const person = {
+            name: 'John',
+            sayHello: function() {
+                console.log(`Hello, my name is ${this.name}!`);
+            }
+            };
+            person.sayHello(); // Output: Hello, my name is John!
+    
+    To summarize:
+    A function is a standalone block of code that can be called independently.
+    A method is a function that is part of an object and is used to perform an action on that object.        
+
+--------------------------------------------------------------------------------------------------------------------------------
 
 
 
