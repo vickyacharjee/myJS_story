@@ -98,23 +98,62 @@
             // console.log(obj2.name); //// vicky-acharjee
 
 
-             const funobj={
-                name:"vicky",
-                greet:function(){
-                    console.log("hey there everyone");
-                },
-                greet2:()=>{
-                    console.log("hey from arrow functions");
-                },
-                greet3(){
-                    console.log("hey from "+this.name)
-             }
-            }
-             console.log(funobj.greet);
-             funobj.greet2();
-             funobj.greet3();
+//              const funobj={
+//                 name:"vicky",
+//                 greet:function(){
+//                     console.log("hey there everyone");
+//                 },
+//                 greet2:()=>{
+//                     console.log("hey from arrow functions");
+//                 },
+//                 greet3(){
+//                     console.log("hey from "+this.name)
+//              }
+//             }
+//              console.log(funobj.greet);
+//              funobj.greet2();
+//              funobj.greet3();
+
+//              let n1=100
+//              let n2=new Number(100)
+//              console.log(typeof n2);
+//              console.log(n1==n2);
+//              console.log(n1===n2);
+//              const numbers = [33, 2, 8]; 
+// numbers.sort();
+// console.log(numbers);
+// console.log(numbers[1])
+// const isTrue = true == [];
+// const isFalse = true == ![];
+
+// console.log(isTrue + isFalse);
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
+
+// const person = 'Lydia';
+// const age = 21;
+
+// getPersonInfo`${person} is ${age} years old`;
 
 
+// const a = {};
+// const b = { key: 'b' };
+// const c = { key: 'c' };
 
-           
+// a[b] = 123;
+// a[c] = 456;
+
+// console.log(a[b]);
+
+
+           let person = { name: 'Lydia' };
+const members = [person];
+console.log(members);
+person = null;
+
+console.log(members);
+console.log('I want pizza'[4]); // returns n
 

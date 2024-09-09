@@ -283,6 +283,7 @@ let s=stringTwo=" vicky acharjee"
         // replaceWith
         console.log(stringTwo.replace('vicky', 'vickyacharjee'));  // vickyacharjee acharjee
 
+
 --------------------------------------------------------------------------------------------------------------------------------
 --Properties and Functions:
 
@@ -591,6 +592,10 @@ numbers.join(','); // returns a string as datatype, containing all elements of t
     let score2=200
     let score3=300
     console.log(Array.of(score1,score2,score3)); //[ 100, 200, 300 ] //of operator adds all the variable in a single array one by one
+
+    //There's a way to access string as array index
+    console.log('2 want pizza'[0]); // returns 2
+    console.log('I want pizza'[4]); // returns n
 
 --------------------------------------------------------------------------------------------------------------------------------
 --Objects: 
