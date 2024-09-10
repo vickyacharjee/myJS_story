@@ -721,6 +721,103 @@ numbers.join(','); // returns a string as datatype, containing all elements of t
         console.log(funobj.greet); // it will return function 
         // this: [Function: greet]
 
+let state="Meghalaya" // creating a variable for object refrence passing
+const obj_one={}
+obj_one.name="vicky",
+obj_one.age=21,
+obj_one["city"]="shillong"
+obj_one.sstate=state
+
+console.log(obj_one);
+
+    //nested objects:
+    const person={
+        userInfo:{
+            userFullName:{
+                firstName:"vicky",
+                lastName:"Acharjee"
+            },
+            userAge:21,
+            UserCity:"shillong",
+            userQualification:{
+                degree:"Btech",
+                branch:"CSE",
+                college:"NIT",
+                state:"trichy",
+            }
+        },
+        isLoggedIn:true,
+        contriesVisited:["india","usa","japan","norway"],
+        cards:[
+            {cardNumber:"1234567890123456",cardType:"visa"},
+            {cardNumber:"9876543210987654",cardType:"mastercard"},
+        ]
+    }
+    console.log(person.userInfo.userFullName.firstName); // printing first name of user
+    console.log(person.userInfo.userAge); // printing age of user, 21
+    console.log(person.contriesVisited[3]);
+    console.log(person.cards[0].cardType);
+    console.log(person.cards[1].cardType);
+
+    // Merging two or more object at one objects
+    const object1={
+        name:"vicky",
+        city:"blr"
+    }
+    const object2={
+        name2:"Nivii",
+        city2:"Qatar"
+    }
+    // 1 WAY:
+    // using confuse approach ** note:: never use just for the clarification purpose
+    // const res={object1,object2}
+    // console.log(res);
+    // it returns like this:: {
+    //   object1: { name: 'vicky', city: 'blr' },
+    //   object2: { name: 'Nivii', city: 'Qatar' }
+    // }
+
+    // 2 WAY: 
+    //using assign method from object library
+    const resultOne=Object.assign(object1,object2)
+    console.log(resultOne);
+
+    // 3 WAY:
+    //using spread operator
+    const resultTwo={...object1, ...object2}
+    // console.log(resultTwo); //{ name: 'vicky', city: 'blr', name2: 'Nivii', city2: 'Qatar' }
+
+    // NOTE: very very important, whenever merging two objects always have the property unique between two or more objects, else the chanes of collision may happen
+
+// Objects keys, value, entries    
+console.log(Object.keys(object1));
+console.log(Object.values(object1));
+console.log(Object.entries(object1));
+// Object.entries makes Array of Array 
+// [
+//   [ 'name', 'vicky' ],
+//   [ 'city', 'blr' ],
+//   [ 'name2', 'Nivii' ],
+//   [ 'city2', 'Qatar' ]
+// ]
+
+//hasOwnProperty
+console.log(object1.hasOwnProperty('name')); //true // checks the properties exist or not in the object returns in boolean
+
+//object de-structure
+
+// Object de-structure
+const object={
+    name:"vicky",
+    age:21,
+    cityOfOrigin:"shillong"
+}
+// console.log(object.cityOfOrigin); //shillong
+const {cityOfOrigin}=object
+const {cityOfOrigin:city}=object
+console.log(cityOfOrigin); //shillong
+console.log(city); //shillong
+
 --------------------------------------------------------------------------------------------------------------------------------
 --Difference between between function and method:
 
