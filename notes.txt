@@ -848,6 +848,172 @@ Method: A method is a function that is part of an object.
     A method is a function that is part of an object and is used to perform an action on that object.        
 
 --------------------------------------------------------------------------------------------------------------------------------
+--Functions:
+Functions are reusable blocks of code that can be called multiple times from different parts of your program.
+They are defined using the function keyword followed by the name of the function and a set of parentheses that
+contain the function's parameters.
+
+    Example: 
+        function myFunction(){
+        // statement inside the block of the function
+        }
+
+        NOTE: myFunction is the refrence of this function.
+              where as, myFunction() with parentheses is calling an function.
+
+    // Adding two number in general:
+    function myFunc(x,y){
+        console.log( x+y);   
+    }
+    myFunc() // nan, this happendns bcoz functio is expecting number, but passed nothing then it log the output as not a number
+    myFunc(5,6) // 11
+
+    // using return keyword:
+    function myFuncTwo(a,b) {
+        return a+b;
+    }
+    let res=myFuncTwo(1,2);
+    console.log(res);
+
+    function myFuncThree(a,b) {
+        console.log(a,b);
+        }
+        myFuncThree(1,2) // 1 2
+        myFuncThree(1,2,3) // 1 2
+        myFuncThree() // undefined undefined
+        myFuncThree(1) // 1 undefined
+        myFuncThree(1,2,3,4) // 1 2
+        myFuncThree(1,2,3,4,5) // 1 2
+       
+    // parameter and argument:
+    parameter:
+    - parameter is the variable that is declared in the function definition.
+    - parameter is the variable that is used to pass the value to the function.
+    - parameter is the variable that is used to receive the value from the function.
+    - parameter is the variable that is used to return the value from the function.
+
+        example:
+        function myFunc(x,y){ // x,y are the varaible passesd as parameter
+            console.log(x,y);
+            }
+    argument:
+    - argument is the value that is passed to the function.
+    - argument is the value that is passed to the function through the parameter.
+    - argument is the value that is passed to the function through the function call.
+    - argument is the value that is passed to the function through the function definition.
+
+        example:
+        function myFunc(x,y){
+            console.log(x,y);
+        }
+        myFunc(1,2) // 1 2 // given as argument to the function to execute.
+
+// Facts about return statement:
+- return statement is used to return the value from the function.
+- return statement is used to exit the function.
+- return statement is used to pass the value to the caller function.
+- return statement is used to pass the value to the function that called the current function.
+- return statement is used to pass the value to the function that is calling the current function.
+- return statement is used to pass the value to the function that is being called by the current function
+
+    function myReturn(a,b) {
+        console.log(a+b);
+    }
+    myReturn(5,6);
+
+    // Here we can see the main purpose of return statement
+    function myReturnTwo(a,b) {
+        console.log(a+b); //  X WRONG METHOD
+    }
+    const result=myReturn(5,6);
+    console.log(result); //undefined
+
+    function myReturnThree(a,b) {
+        return a+b; //  RIGHT METHOD
+    }
+    const result2=myReturnThree(5,6);
+    console.log(result); // 11
+
+    // NOTE: anything written after return statement passed in function will not be accepted
+
+// calling a function with a validation:
+    function callMe(name) {
+        if (name===undefined) { // (!name) another form
+            console.log("plz pass the name as argument");
+            return // this return keyword is very impt since if the name is undefined then it will pass as  'plz pass the name as argument' plus the below line too... so its impt to stop our function execution.
+        }
+        return `Hello ${name}`
+    }
+    console.log(callMe('vicky'));//Hello vicky
+    console.log(callMe());//Hello plz pass the name as argument
+                                OR
+    // using default parameter                            
+    function callMe(name="user") {
+    return `Hello ${name}`
+    }
+    console.log(callMe()); //hello user    // no need for validation just pass the Default value in the parameter itself.                        
+--------------------------------------------------------------------------------------------------------------------------------
+
+-- rest operator
+// rest operator is used to pass multiple arguments to a function.
+// rest operator is used to pass multiple values to a function.
+// rest operator is used to pass multiple parameters to a function.
+// rest operator is used to pass multiple arguments to a function.  
+
+    // example: in this example we will see the advantage of having the rest operator, since its dynamically accepting the multiple values mabe one or many
+    // NOTE: values passed in the argument are accepted as array formation eg: [1,2,3,4,5]
+    function myShoppingCart(...value) {
+        // console.log( value);
+        let sum=0
+        for(let i=0;i<value.length;i++){
+        sum=sum+value[i];
+        console.log(sum);
+        }
+    }
+    myShoppingCart(1,2,3,4,5);//15
+
+    **Pasing object in the function:
+    // passing an object in the function means how using the classic functions we can retrieve the data from the object
+    // There are two ways to perform
+
+    // 1. standard way:
+        const obj={
+        productName:"Ipone",
+        price:10000,
+        }
+    function objFunc(info) {
+    return `The product name is ${info.productName} and its price is ${info.price}`
+    }
+    console.log(objFunc(obj)); //The product name is Ipone and its price is 10000
+
+    // 2. another way is: directly embed the object in the parameter itself
+    console.log(objFunc(
+    {
+     productName:"samsung",
+     price:20000,
+    }
+    )); //The product name is samsung and its price is 20000
+
+      **Pasing array in the function:
+    // 1. passing as array [standard form]
+    const myArray=[12,3,33,3];
+    function arrayFunc(arr){
+        console.log("The  array is ", arr[1]);
+    }
+    console.log(arrayFunc(myArray)); //The  array is  3
+
+    // 2. Another method is directly passing the set of array as an parameter
+    console.log(arrayFunc([1,2,3])); //The  array is  2 
+--------------------------------------------------------------------------------------------------------------------------------    
+
+
+            
+
+
+
+
+
+
 
 
 
