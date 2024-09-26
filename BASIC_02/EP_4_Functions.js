@@ -194,9 +194,9 @@ const myArray=[12,3,33,3];
 function arrayFunc(arr){
     console.log("The  array is ", arr[1]);
 }
-console.log(arrayFunc(myArray)); //The  array is  3
+// console.log(arrayFunc(myArray)); //The  array is  3
 
-console.log(arrayFunc([1,2,3])); //The  array is  2
+// console.log(arrayFunc([1,2,3])); //The  array is  2
 
 
 

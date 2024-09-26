@@ -65,6 +65,44 @@
 //     return value+1;
 // }
 
+// ----------------SecondPart------------------
+console.log("second-part");
+
+let a=10;
+const b=20;
+var c=30;
+
+if (true) {
+    let a=100;
+    const b=200;
+    var c=300;
+ }
+//  console.log(a);//10
+//  console.log(b);//20
+//  console.log(c);//300
+ 
+// s1.
+
+function one() {
+    let userName="vicky";
+    function two() {
+        let website="youtube"
+        console.log(userName);
+    }
+    // console.log(website);
+    two()
+}
+one()
+
+//s2.
+    function userName(name) {
+        if (name==="vicky") {
+            console.log("hey vicky");
+            let outterName="aka";
+        }
+        // console.log(outterName);
+    }
+    userName("vicky")
 
 
 

@@ -1005,6 +1005,149 @@ contain the function's parameters.
     // 2. Another method is directly passing the set of array as an parameter
     console.log(arrayFunc([1,2,3])); //The  array is  2 
 --------------------------------------------------------------------------------------------------------------------------------    
+--Scope:
+// scope is the region of the code where a variable is defined and can be accessed
+// there are two types of scope in JavaScript
+// 1. Global scope
+// 2. Local scope
+
+//Technical naming jargans
+// 1. Block scope
+// 2. Function scope
+// 3. Lexical scope
+// 4. Closure scope
+// 5. Module scope
+// 6. Arrow function scope
+
+var: var is independent of the scopes, which means it can be accessed anywhere in or within the scopes
+let and const: let and const are dependent on the scopes, which means they can only be accessed.
+
+    Example:
+    let a=10;
+    const b=20;
+    var c=30;
+
+    if (true) {
+        let a=100;
+        const b=200;
+        var c=300;
+    }
+    console.log(a);//10
+    console.log(b);//20
+    console.log(c);//300 // since the var is independent of scoping, so it is intepreting line by line and over-riding, and the value got updated inside if block to 300. 
+--------------------------------------------------------------------------------------------------------------------------------    
+--Scope-Manipulation and Mini-Hoisting:
+    Scenario 1:
+        function one() {
+            let userName="vicky";
+            function two() {
+                let website="youtube"
+                console.log(userName);
+            }
+            // console.log(website);  // reaching this line will pas an error as website not defined
+            two()
+        }
+        one()
+
+    Scenario 2:
+        function userName(name) {
+            if (name==="vicky") {
+                console.log("hey vicky");
+                let outterName="aka";
+            }
+            // console.log(outterName); //reaching this line will pas an error as website not defined
+        }
+        userName("vicky")
+
+// mini-hoisting:
+
+     // classic JS function.
+    function addOne(value) {
+    return value+1;
+    }
+ console.log(addOne(1)); //2
+
+// Expression JS function.
+    let addTwo=function (value) {
+        return value+1;
+    }
+ console.log(addTwo(2)); //3
+            
+  // NOTE: now we will call both the function and initiliaze after it.
+
+    console.log(addOne(1));
+    function addOne(value) {
+        return value+1;
+    } // This is working normal, not any changes
+
+    console.log(addTwo(2));
+    let addTwo=function (value) {
+        return value+1;
+    }// this throws an error as 'Cannot access 'addTwo' before initialization', bcoz in callstack the function is given another priority queue, and here its holded as an expression (variable).
+--------------------------------------------------------------------------------------------------------------------------------    
+
+--this-keyword and Arrow Functions:
+    const data={
+    ProductName:"gta",
+    price:999,
+    welcomeMessage:function () {
+        console.log("Hello ",this.ProductName);
+        console.log(this); // NOTE: if we log this then the current context of the object is displayed.
+    }
+    }
+    console.log(data.welcomeMessage()); // hello gta
+    data.ProductName="igi" // override productName from gta to igi.
+    console.log(data.welcomeMessage()); // hello igi
+    
+    //checking its global object
+    console.log(this);// NOTE: this returns nothing since we are under node environment
+                     // NOTE: same this inside browser environemt we would do then  it returned the global window object.
+
+    function callMe() {
+    console.log(this);
+    }                  
+    callMe() // this retruns the current context of this particular function.
+
+//Arrow Functions:
+//Arrow functions:
+// 1. Arrow functions do not have their own this context.
+// 2. Arrow functions do not have their own arguments object.
+// 3. Arrow functions do not have their own super keyword.    
+
+syntax:
+const addOne=(value)=>value+1;
+
+const addOne=(value)=>value+1; 
+const addOne=(value)=>{return value+1;}
+const addOne=(value)=>{value+1;} // this will throw an error as we are not returning anything.
+
+    // Again theres a constraints, since arrow functions dosent store there own context execution.
+    // Example: 
+                // arrowOne() // again this throws as an error, since this is stored as a expression (variable) and it dosent have its own context 
+                const arrowOne=()=>{
+                console.log("hello from arrow functions");
+                }
+
+// implicit arrow functions:
+// NOTE: VERY important, whenever we use arrow function implicitly then, its not madatory to use return functions.
+const implicitArrow=()=> console.log(123);
+const implicitArrow2=(n1,n2)=> n1+n2; //passing as parameter too 
+const implicitArrow3=(n1,n2)=>(n1-n2); // if makes confuse then we are permitted to use () braces
+
+// Explicit arrow functions:
+// NOTE: VERY important, whenever we use arrow function explicitly then, its madatory to use return
+// whenever {} braces comes then it is mandatory to use the return keyword.
+const explicitArrow=()=>{
+  return 123
+};
+
+// CONFUSION ARISE, we generally use explicit arrow functions, since implicit arrow functions, cant hadle objects, lets demonstarte it with an scenario:
+const obj1={  
+}
+// now using, implicit arrow function
+// const implicitArrowFunction=(n1,n2)=>{name:"vickyA"} // incorrect way
+const implicitArrowFunction=(n1,n2)=>({name:"vickyA"}) 
+console.log(implicitArrowFunction(1,2)); // correct way                
 
 
             
