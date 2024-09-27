@@ -1148,6 +1148,91 @@ const obj1={
 // const implicitArrowFunction=(n1,n2)=>{name:"vickyA"} // incorrect way
 const implicitArrowFunction=(n1,n2)=>({name:"vickyA"}) 
 console.log(implicitArrowFunction(1,2)); // correct way                
+--------------------------------------------------------------------------------------------------------------------------------    
+--IIFE (immediately invoked function expression):
+// IIFE is a function that is invoked immediately after its definition.
+// IIFE is used to create a new scope and to prevent global variables.
+// it basically avoids from global scoping.
+
+    //noraml function:
+    function callMe(){
+        console.log("hello")
+    }
+    callMe() //hello
+
+    //using IIFE:
+    // just use (this for function) (this for call) <-Technique to remember.
+    (function callme(){
+        console.log("hello from iife)
+    })() // hello from iife
+
+    // Note if we want to use more than one IIFE in a single scope then always use to conclude with ;
+        Example:
+        ->The single scope{
+        (function fromIifeOne(){
+        console.log("hello from iife)
+        })(); // The scenario where we are using (;) SEMICOLON
+
+        (function fromIifeTwo(){
+        console.log("hello from iife)
+        })();
+        }
+
+    // we can even pass the, parameter to it
+    (function calleMe(name))(
+        console.log("hello from iife, "+name)
+    )("vicky") // hello from iife vicky     
+
+    // There are two types of iife, that we can implement
+    1.iffe with function name
+        ex:
+             (function fromIifeOne(){
+        console.log("hello from iife)
+        })();
+
+    2.iife with aonmous function
+        ex:
+             (function (){
+        console.log("hello from iife)
+        })();
+        // same thing can be done via arrow function too.
+--------------------------------------------------------------------------------------------------------------------------------    
+--truthy and falsy:
+// truthy values are those values that are treated as true in a conditional statement.
+// falsy values are those values that are treated as false in a conditional statement.
+
+// in js there are  falsy values:
+    null, false, 0, -0, undefined, null, BigInt, NaN
+// in js the truthy values are:
+    "0","false"," "<- since there is a space and it indicates the presence of value as space,[],{}
+
+    // prove that an empty array and object are considered as truthy:
+        // array
+        let arr=[];
+        if (arr) {
+            console.log("true");
+        }
+        if (arr.length===0) {
+            console.log("true");
+        }
+        //object
+        let obj={}
+        if (obj) {
+            console.log("true from obj");
+        }
+        if (Object.keys(obj).length===0) {
+            console.log("true from object");
+        }
+        
+            
+
+
+
+
+
+
+
+
 
 
             

@@ -37,5 +37,12 @@
         // callMe()
 
 
+// -----------secondPart------------
+
+ (function (){
+        console.log("hello from iife")
+  })();
+
+
         
 

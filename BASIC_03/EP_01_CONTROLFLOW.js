@@ -104,6 +104,25 @@ let c='ccc'
 console.log("ccc"===c);
 
 
+console.log("-----second part--------");
+// array
+let arr=[];
+if (arr) {
+    console.log("true");
+}
+if (arr.length===0) {
+    console.log("true");
+}
+//object
+let obj={}
+if (obj) {
+    console.log("true from obj");
+}
+if (Object.keys(obj)) {
+    console.log("true from object");
+}
+
+
 
 
 
