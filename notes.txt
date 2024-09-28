@@ -1223,8 +1223,62 @@ console.log(implicitArrowFunction(1,2)); // correct way
         if (Object.keys(obj).length===0) {
             console.log("true from object");
         }
-        
-            
+
+  // Equality check:
+    console.log(false==false);// true
+    console.log(false=="");// true
+    console.log(""==0);// true    
+--------------------------------------------------------------------------------------------------------------------------------    
+
+--Nullish Coalescing operator:
+// the nullish coalescing operator is a new operator in js that was introduced in es
+// it is used to return the first operand if it is not null or undefined, otherwise it returns the second operand.
+// it is denoted by the symbol '??'
+// it is used to avoid the confusion between the equality operator and the assignment operator.
+// Note: only works with  NULL and UNDEFINED.
+// generally, we use it while fetching some data from the external sources, likewise third party database etc
+
+    Example:
+    let val;
+    // with null
+    val=null??10;
+    console.log(val);//10
+
+    val=10??null;
+    console.log(val);//10
+
+    // with undefined
+    val=undefined??20;
+    console.log(val);//20
+
+    val=20??undefined;
+    console.log(val);//20
+
+    // with multiple values:
+    val=1??2??3??undefined;
+    console.log(val);//1 // Note: always remember, it returns the first number, compulsorily except undefined and Null
+--------------------------------------------------------------------------------------------------------------------------------    
+
+--Terniary operator:
+// the ternary operator is a shorthand for if-else statement.
+// it is used to return one value if the condition is true and another value if the condition is
+// false. it is denoted by the symbol '?'
+
+    Syntax:
+         condition ? true block : false block
+
+    Example: Demonstrating, whether a person can vote or not.
+    const value=18;
+    value>=18 ? console.log("yo can vote"):console.log("You are not eligible");
+--------------------------------------------------------------------------------------------------------------------------------                 
+
+
+
+
+
+
+
+                
 
 
 

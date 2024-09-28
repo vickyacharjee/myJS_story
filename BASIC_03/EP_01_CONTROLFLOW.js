@@ -122,6 +122,42 @@ if (Object.keys(obj)) {
     console.log("true from object");
 }
 
+// Equality check:
+console.log(false==false);// true
+console.log(false=="");// true
+console.log(""==0);// true
+
+let val;
+// with null
+val=null??10;
+console.log(val);
+
+val=10??null;
+console.log(val);
+
+// with undefined
+val=undefined??20;
+console.log(val);
+
+val=20??undefined;
+console.log(val);
+
+// with multiple values:
+val=1??2??3??undefined;
+console.log(val); // Note: always remember, it returns the first number, compulsorily except undefined and Null
+
+// terniarily opeeartor:
+const value=18;
+value>=18 ? console.log("yo can vote"):console.log("You are not eligible");
+
+
+
+
+
+
+
+
+
 
 
 
