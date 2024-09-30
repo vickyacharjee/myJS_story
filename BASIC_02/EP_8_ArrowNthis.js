@@ -52,3 +52,7 @@ const obj3=()=>({name:21})
 console.log(obj3());
 
 //Remeber explict means havong a use of return keyword as well consumptio  of mor more than 2 lines
+
+if (!0) {
+    console.log("true");
+}

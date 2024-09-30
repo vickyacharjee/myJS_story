@@ -223,6 +223,139 @@ FilePath.forEach((item)=>{
 
 
 
+console.log("--------------SecondPart----------------");
+
+// forof
+//NOTE: forOf only works with: array, strings, maps,sets, argument-objects,typed array
+ //forOf with array
+    let arr=[1,2,3,4,5];
+    for (const num of arr) {
+        // console.log(num); //1,2,3,4,5
+    }
+    // forOf with Strings
+    let greetings="hello vicky"
+    for (const greet of greetings) {
+        // console.log(greet); //hello vicky
+    } 
+    // OR just a form of practice skipping the space via continue statement.
+    let greetingsTwo="hello vicky"
+    for (const greet of greetingsTwo) {
+        if (greet==" ") {
+            continue;
+            // console.log("avoided the space");
+        }
+        // console.log(greet); // hellovicky -> spaces avoided
+    }
+ // map
+    //creating a map object:
+    const myMap=new Map();
+    myMap.set("name","vicky");
+    myMap.set("age","21")
+    console.log(myMap); // Map(2) { 'name' => 'vicky', 'age' => '21' }
+
+    // now looping the myMap object:
+    // here we will encounter an issue i.e, whole key and value is been printed.
+    for (const key of myMap) {
+        console.log(key); //[ 'name', 'vicky' ]  [ 'age', '21' ]
+    }
+    //to print only the keys then:
+    // for key
+    for (const [key,value] of myMap) { // now the map object has been de-structured
+        console.log(key); //name and age
+    }
+    //to print only the values of the key then:
+    // for value
+    for (const [key,value] of myMap) { // now the map object has been de-structured
+        console.log(value); //vicky and 21
+    }
+
+// forIn loop:
+ //NOTE: forIn only works with: objects, arrays, maps,sets, argument-objects
+
+ // Objects:
+    const myObj={
+        YourName:"legend",
+        YourAge:22,
+    }
+    // for key
+    for (const key in myObj) {
+        console.log(key); // this simply returns the key i.e YourName and YourAge
+        }
+    // for value    
+    // NOTE: here, if we want to print the value of myObj then:        
+    for (const key in myObj) {
+        console.log(myObj[key]); //legend and 22
+    }    
+ // array:
+ let arrTwo=['js','java']
+ // for key in forIn:
+ for (const key in arrTwo) {
+    console.log(key); // Note: in forOf loop simply u will get the key of array, but here it retuens in the index number not the value.
+ }
+
+ // for value in forIn:
+ for (const key in arrTwo) {
+    console.log(arrTwo[key]); // Note: we got the value of it. 
+ }
+
+ //map:
+ //creating a map object:
+    const myMapTwo=new Map();
+
+    myMapTwo.set(
+        "class","12",
+        "sec","A"
+    )
+    console.log(myMapTwo); // { 'class' => '12' }
+
+ // using forIn:
+    for (const key in myMapTwo) {
+       console.log(key); // returns blank.. sinc maps are not iretable
+    }
+
+// forEach:
+const thisArray=[1,2,3,4]
+thisArray.forEach((i)=>{
+    console.log(i);
+})    
+// full fledged
+thisArray.forEach((i,index,arr)=>{
+    console.log(`The value for ${index} is ${i} and the array is ${arr}`);
+})
+
+// doing the operation with forEach as array of object
+// Very common operation:
+
+const programming=[
+    {
+        langName:"java",
+        fileName:"java"
+    },
+    {
+        langName:"javaScript",
+        fileName:"js"
+    },
+    {
+        langName:"C++",
+        fileName:"cpp"
+    },
+    {
+        langName:"php",
+        fileName:"php"
+    }
+]
+
+programming.forEach((item)=>{
+    console.log(`The file name is ${item.langName} and its extension is ${item.fileName}`);
+})
+
+
+
+
+    
+
+
+
 
 
 
