@@ -287,3 +287,130 @@ console.log(map2);
 // map=mOne.map((n)=>n+12)
 // console.log(map);
 
+console.log("------secondPart---------");
+//Filter:
+// Note: filter returns, so make a new variable and add to it.
+myArray=[1,2,3,4,5]
+// const filter1=myArray.filter((num)=>num>3) // Implicit
+const filter1=myArray.filter((num)=>{
+  return num>3; //if used {} braces then, use return,since we returning a value
+})
+// console.log(filter1); //4,5
+
+const newArr=[]
+const newFilter=myArray.forEach((num)=>{
+  if (num>3) {
+    newArr.push(num)
+  }
+})
+console.log(newArr);
+
+
+
+const books = [
+  {
+    bookName: "To Kill a Mockingbird",
+    bookPrice: 15.99,
+    publishYear: 1960
+  },
+  {
+    bookName: "1984",
+    bookPrice: 12.99,
+    publishYear: 1949
+  },
+  {
+    bookName: "Pride and Prejudice",
+    bookPrice: 10.99,
+    publishYear: 1813
+  },
+  {
+    bookName: "The Great Gatsby",
+    bookPrice: 14.99,
+    publishYear: 1925
+  },
+  {
+    bookName: "The Catcher in the Rye",
+    bookPrice: 11.99,
+    publishYear: 1951
+  }
+];
+
+// console.log("books");
+let res=books.filter((book)=> book.bookPrice>12)
+      res=books.filter((book)=> book.bookPrice>10)
+      res=books.filter((book)=>book.bookName=="The Catcher in the Rye")
+console.log(res);
+
+//Reduce
+const shoppingCart=[
+  {
+    item:"apple",
+    price:299,
+    quantity:1
+  },
+  {
+    item:"Banana",
+    price:99,
+    quantity:2
+  },
+  {
+    item:"grapes",
+    price:199,
+    quantity:1
+  }
+]
+const price=shoppingCart.reduce((acc,item)=>{
+  return acc+item.price;
+},0)// 597
+const quantity=shoppingCart.reduce((acc,item)=>acc+item.quantity,0)
+console.log(quantity); //4
+
+// map:
+let arr=[1,2,3,4]
+let result=arr.map((n)=>{
+  return n*10;
+})
+console.log(result); // [10,20,30,40]
+
+result=arr.map((n)=>{
+  return n+10;
+})
+console.log(result); // [ 11, 12, 13, 14 ]
+
+// chaining 
+console.log("chain");
+
+
+let array=[1,2,3,4,5,6,7,8,9]
+const chain1=array.map((n)=>n*10)
+                  .map((n)=>n+1)  
+console.log(chain1); // [11, 21, 31, 41, 51,61, 71, 81, 91]
+
+const chain2=arr.map((n)=>n*20)
+                .map((n)=>n+12)
+                .filter((n)=>n>=52)
+console.log(chain2); // [ 52, 72, 92 ]
+
+//practical example: print only even numbers
+// let array=[1,2,3,4,5,6,7,8,9]
+// const answer=array.map((n)=>{
+//   if (n%2==0) {
+//     return `${n} is Even`
+//   }
+//   else{
+//     return `${n} is odd`
+//   }
+// })
+console.log(answer);
+
+
+let array2=[1,2,3,4,5,6,7,8,9]
+const answer=array2.filter((n)=>{
+return n%2==0
+})
+console.log(answer);
+
+
+
+
+

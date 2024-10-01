@@ -1400,6 +1400,7 @@ console.log(implicitArrowFunction(1,2)); // correct way
 --------------------------------------------------------------------------------------------------------------------------------                   
 --forEach:
 //forEach() is a method that calls a provided function once for each element in an array. 
+// forEach doesnt returns the value
 
     syntax: 
         forEach(callBackFunction
@@ -1464,6 +1465,233 @@ console.log(implicitArrowFunction(1,2)); // correct way
     })
     console.log(value)// returns undefined, this is the issue.
 --------------------------------------------------------------------------------------------------------------------------------                   
+
+// Filter: The filter() method in JavaScript is a powerful
+           tool for working with arrays. It creates a new array with all 
+           elements that pass the test implemented by a provided function.
+           
+           // It does not change the original array.
+
+           // filter works in a philosophy, like if the condition is true then it immediately returns the current context of execution.
+
+    //Filter: (Filter functons returns the value)
+    // Note: filter returns, so make a new variable and add to it.
+    myArray=[1,2,3,4,5]
+    // const filter1=myArray.filter((num)=>num>3) // Implicit
+    const filter1=myArray.filter((num)=>{
+    return num>3; //explicit, if used {} braces then, use return,since we returning a value
+    })
+    console.log(filter1); //4,5
+
+     Example scenario showing forEach doing the same:
+        const newArr=[] // new array for the result output
+        const newFilter=myArray.forEach((num)=>{
+        if (num>3) {
+            newArr.push(num)
+        }
+        })
+        console.log(newArr); [4,5]
+        // By observing this, we found that filter is well efficient to use while dealing with these types of scenarios.
+        // filter is more efficient than forEach because it returns a new array, while forEach does not return
+
+        //Another Example:
+
+        const books = [
+        {
+            bookName: "To Kill a Mockingbird",
+            bookPrice: 15.99,
+            publishYear: 1960
+        },
+        {
+            bookName: "1984",
+            bookPrice: 12.99,
+            publishYear: 1949
+        },
+        {
+            bookName: "Pride and Prejudice",
+            bookPrice: 10.99,
+            publishYear: 1813
+        },
+        {
+            bookName: "The Great Gatsby",
+            bookPrice: 14.99,
+            publishYear: 1925
+        },
+        {
+            bookName: "The Catcher in the Rye",
+            bookPrice: 11.99,
+            publishYear: 1951
+        }
+        ];
+
+        // console.log(books);
+        let res=books.filter((book)=> book.bookPrice>12)
+            res=books.filter((book)=> book.bookPrice>10) // it just override the main book array... and do not affect the main array
+            res=books.filter((book)=>book.bookName=="The Catcher in the Rye")
+        console.log(res);
+--------------------------------------------------------------------------------------------------------------------------------                   
+--Reduce:
+// Reduce is a method that applies a function against an accumulator and each element in the array.
+// It does not change the original array.
+// The accumulator is a value that is kept as a result of applying the function to the elements of
+   the array. The function is called for each element in the array and the result is stored in
+ 
+    syntax for .reduce is:
+    array.reduce((callBackFunction,initial))
+    ->callBackFunction contains the accumulator and the item:(acc,item)
+    ->initial is the initial value of the accumulator
+
+    Example:
+    //Reduce
+    const shoppingCart=[
+    {
+        item:"apple",
+        price:299,
+        quantity:1
+    },
+    {
+        item:"Banana",
+        price:99,
+        quantity:2
+    },
+    {
+        item:"grapes",
+        price:199,
+        quantity:1
+    }
+    ]
+    //Explicit return
+    const price=shoppingCart.reduce((acc,item)=>{
+    return acc+item.price;
+    },0)// 597   // always remember, using of {} braces mean return key will be used
+
+    //Implicit return
+    const quantity=shoppingCart.reduce((acc,item)=>acc+item.quantity,0)
+    console.log(quantity); //4
+--------------------------------------------------------------------------------------------------------------------------------                   
+
+--Map:
+// Map is a method that creates a new array with the results of applying a provided function on every element in this array.
+// It does not change the original array.
+    syntax:
+    array.map((callBackFunction))
+    ->callBackFunction contains the item:(item)
+    ->return value will be used to create a new array
+   
+    Example:
+    //Map
+    let arr=[1,2,3,4]
+    let result=arr.map((n)=>{
+    return n*10;
+    })
+    console.log(result); // [10,20,30,40]
+
+    result=arr.map((n)=>{
+    return n+10;
+    })
+    console.log(result); // [ 11, 12, 13, 14 ]
+--------------------------------------------------------------------------------------------------------------------------------                   
+
+-- Chaining in MAP and FILTER:
+   Example 1:
+    let array=[1,2,3,4,5,6,7,8,9]
+    const chain1=array.map((n)=>n*10)
+                    .map((n)=>n+1)  
+    console.log(chain1); // [11, 21, 31, 41, 51,61, 71, 81, 91]
+
+    Example 2:
+    const chain2=arr.map((n)=>n*20)
+                    .map((n)=>n+12)
+                    .filter((n)=>n>=52)
+    console.log(chain2); // [ 52, 72, 92 ]
+
+
+    //practical example: print only even numbers
+    // using map.
+        let array=[1,2,3,4,5,6,7,8,9]
+        const answer=array.map((n)=>{
+        if (n%2==0) {
+            return `${n} is Even`
+        }
+        else{
+            return `${n} is odd`
+        }
+        })
+        console.log(answer);
+
+        Example 2:
+        let array2=[1,2,3,4,5,6,7,8,9]
+        const answer=array2.filter((n)=>{
+        return n%2==0
+        })
+        console.log(answer); //[ 2, 4, 6, 8 ]
+--------------------------------------------------------------------------------------------------------------------------------                   
+
+-- DOM Document object model:
+// DOM is a programming interface for HTML and XML documents. It defines the logical structure of documents
+   and the way a document is accessed and manipulated.
+
+// NOTE: in browser, the global object is the   WINDOW object.
+// that means this is the root for all the other object.
+// window is the global object in browser.
+// in node.js the global object is the process object.
+
+        Example:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Document</title>
+        </head>
+        <body>
+            <h1>Hello</h1>
+        </body>
+        </html>
+        
+        DOM working:
+        // window-> document-> body-> h1-> textnode(Hello)
+
+
+//Facts about window object:
+1. Global Object: The window object is the global object in a web browser, meaning that all global variables and functions are properties of the window object.
+
+2. Top-Level Object: The window object is the top-level object in the browser's object hierarchy, and all other objects, including the document object, are children of the window object.
+
+3. Window Object is not an Object: Despite its name, the window object is not an instance of the Object class. Instead, it is a unique object that is created by the browser.
+
+4. Window Object is not a Constructor: The window object is not a constructor function, and it cannot be used to create new objects using the new keyword.
+
+5. Window Object has no Prototype: The window object does not have a prototype chain, which means that it does not inherit properties from any other object.
+
+6. Window Object is not Enumerable: The properties of the window object are not enumerable, which means that they cannot be iterated over using a for...in loop.
+
+7. Window Object has a lot of Properties: The window object has a large number of properties, including properties that provide access to the document object, the browser's history, and the browser's screen.
+
+8. Window Object has a lot of Methods: The window object has a large number of methods, including methods that provide access to the browser's alert and confirm boxes, the browser's prompt box, and the browser's print function.
+
+9. Window Object is not the same as the Global Object: While the window object is the global object in a web browser, it is not the same as the global object in other environments, such as Node.js.
+
+10. Window Object is not supported in all Browsers: While the window object is supported in most modern web browsers, it is not supported in all browsers, such as some older versions of Internet Explorer.
+
+    //Some commonly used properties used in window objects are:
+    window.location: provides access to the URL of the current document
+    window.document: provides access to the document object
+    window.history: provides access to the browser's history
+    window.screen: provides access to the browser's screen
+    window.alert(): displays a message box with a single button
+    window.confirm(): displays a message box with two buttons (OK and Cancel)
+    window.prompt(): displays a message box with a text input field
+    window.print(): prints the current document
+    window.setTimeout(): executes a function after a specified delay
+    window.setInterval(): executes a function at regular intervals
+
+    Note: we generally dont need to always embed "window" suppose we want to access document, then we can directly console log window.
+--------------------------------------------------------------------------------------------------------------------------------                   
+
+
+
+
+
+
 
 
 
