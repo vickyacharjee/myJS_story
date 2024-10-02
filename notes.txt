@@ -1632,8 +1632,8 @@ console.log(implicitArrowFunction(1,2)); // correct way
    and the way a document is accessed and manipulated.
 
 // NOTE: in browser, the global object is the   WINDOW object.
-// that means this is the root for all the other object.
 // window is the global object in browser.
+// that means this is the root for all the other object.
 // in node.js the global object is the process object.
 
         Example:
@@ -1687,9 +1687,181 @@ console.log(implicitArrowFunction(1,2)); // correct way
     Note: we generally dont need to always embed "window" suppose we want to access document, then we can directly console log window.
 --------------------------------------------------------------------------------------------------------------------------------                   
 
+--DOM multipliacion:
+ document.getElementById(): returns the element with the specified id.
+
+┌─────────────────────----------------------------------------------------------──────┐
+│                           
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <h1  id="heading" class="bg-body">Hello world</h1>
+        </body>
+        </html>                      
+│                           
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+    //returns the tag
+    document.getElementById('heading')
+    returns: <h1 id=​"heading" class=​"bg-body">​Hello world​</h1>​ // returns the complete tag with a id 'heading'
+
+    // techniue to retrieve id
+    document.getElementById('heading').id
+    returns: 'heading'
+    OR
+    //via getAttribute() // this method basically returns the value, provided the key
+    document.getElementById('heading').getAttribute('id')
+    returns: 'heading'
+    
+    
+    // techniue to retrieve className
+    document.getElementById('heading').className // here we have to provide the className not the class
+    returns: 'bg-body'
+    OR
+    //via getAttribute() // this method basically returns the value, provided the key 
+    document.getElementById('heading').getAttribute('class')
+    returns: 'bg-body'
+
+    // set-ing an attribute via setAttribute():
+    document.getElementById('heading').setAttribute('heading','vicky')
+    retruns: <h1  id="heading" class="vicky">Hello world</h1>
+
+    -> Manipulating the css via .style attribute
+       document.getElementById('heading').style.color="red" // the text color changes to red.
+                    or // we can even put it into a variable:
+       var heading = document.getElementById('heading');
+       heading.style.color = "red";
+       heading.style.backgroundColor = "red"; etc etc
+
+    -> Text Manipulation: while displaying
+       1. innerHTML
+       2. textContent
+       3. innerText
+
+       //index.html
+        <h1  id="heading" class="bg-body">Hello world <span>hello from span</span> </h1>
+        //JS
+        const title=document.getElementById('heading')
+
+        // this is the difference btw all these 3
+        //innerHTML
+        title.innerHTML
+        'Hello world<span style="display:none;">hello from span</span>\n    ' // returns the whole html tag
+        //textContent 
+        title.textContent
+        'Hello worldhello from span\n    returns the content for all the tags
+        //innerText '
+        title.innerText
+        'Hello world'  // returns only the exact text of title
+--------------------------------------------------------------------------------------------------------------------------------
+
+--Dom selectors:
+1. document.getElementById('id') // select the tag by id
+example: document.getElementById('heading')
+
+
+2. document.querySelector('css selector') // this gets **first** selected by query only. 
+//example: Note: querySelector only selects first tag, irrespective of many
+        document.querySelector('h1') // returns the first h1 tag
+        document.querySelector('#heading') // returns the first element with id heading
+        document.querySelector('.bg-body') // returns the first element with class bg-body
+        document.querySelector('h1.bg-body') // returns the first h1 tag with class bg-body
+        document.querySelector('h1.bg-body#heading') // returns the first h1 tag with class
+
+3. document.querySelectorAll('css selector') // there not much diff btw these two, but the only difference is it selects all the tags of same type.
+//example:Note: querySelectorAll selects all the tags, irrespective of how many.
+        document.querySelectorAll('h1') // returns all the h1 tags
+        document.querySelectorAll('#heading') // returns all the elements with id heading
+        document.querySelectorAll('.bg-body') // returns all the elements with class bg-body
+        document.querySelectorAll('h1.bg-body') // returns all the h1 tags with class bg-body
+   
+4. document.getElementsByClassName('class')// this selects the tag by className
+//example:Note: getElementsByClassName returns all the tags of same class
+        document.getElementsByClassName('bg-body') // returns all the elements with class bg-body
+        document.getElementsByClassName('bg-body')[0] // returns the first element with class bg-body
+        document.getElementsByClassName('bg-body')[1] // returns the second element with class bg-body
+        document.getElementsByClassName('bg-body')[2] // returns the third element with class bg-body
+
+5. document.getElementsByTagName('tagname') // this selects by the element name
+//example:Note: getElementsByTagName returns all the tags of same name
+        document.getElementsByTagName('h1') // returns all the h1 tags
+        document.getElementsByTagName('h1')[0] // returns the first h1 tag
+
+6. document.getElementsByName('name') // this selects by the Name
+//example:Note: getElementsByName returns all the tags of same name
+        document.getElementsByName('name') // returns all the elements with name name
+        document.getElementsByName('name')[0] // returns the first element with name name
+--------------------------------------------------------------------------------------------------------------------------------
+
+--NdeList:
+1. NodeList.prototype.forEach() // this is used to loop through the NodeListIn the Document Object Model (DOM),
+   a NodeList is a collection of DOM nodes, typically returned by methods like document.querySelectorAll() or childNodes.
+   It looks similar to an array, but it’s not exactly the same because it doesn’t have all the array methods (unless converted to an array explicitly).
+
+   Live vs. Static NodeList:
+
+  Live NodeList: Updates automatically when the document is modified (e.g., childNodes).
+  Static NodeList: Does not update when the document changes (e.g., document.querySelectorAll()).
+  Example:
+        const nodeList = document.querySelectorAll('div');
+        console.log(nodeList[0]);  // Accesses the first div element
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+--Exercises:
+    -- Exercise: given the html as index.html so, select the firs li element and returns the color to green and much padding too
+
+        Solution:
+        const title=document.querySelector('li')
+        undefined
+        title
+        <li ">​…​</li>​
+        title.style.backgroundColor="green"
+        'green'
+        title.style.padding="20px"
+        '20px'
+
+
+    -Exercise: given the html as index.html so, select all the li element and returns the color to green and much padding too
+        Solution:
+        const title=document.querySelectorAll('li')
+        undefined
+        title.forEach((n)=>{
+            n.style.backgroundColor="red"
+        })
+        'red'
+--------------------------------------------------------------------------------------------------------------------------------
+
+--Converting html collect to array.
+An HTMLCollection is a collection of elements that are returned by methods like document.getElementById() or document.getElementsByName
+const htmlCollection = document.querySelectorAll('div');
+const array = Array.from(htmlCollection);
+console.log(array); // Output: [div, div, div]
+--------------------------------------------------------------------------------------------------------------------------------
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -1717,7 +1889,6 @@ console.log(implicitArrowFunction(1,2)); // correct way
 
 
             
-
 
 
 
