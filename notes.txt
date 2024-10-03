@@ -1843,8 +1843,74 @@ const array = Array.from(htmlCollection);
 console.log(array); // Output: [div, div, div]
 --------------------------------------------------------------------------------------------------------------------------------
 
+-- Element Manipulation:
+    
+    // accessing the parent class via querySelector.
+    const parent=document.querySelector('.parent');
 
+    ->
+    console.log(parent); // <div class="parent"> </div>
+    console.log(parent.children); // HTMLCollection(5) [div.day, div.day, div.day, div.day, div.day] ... works somehow like array
+    console.log(parent.children[0]); // <div class="day">Monday</div>
+    console.log(parent.children[1].innerHTML); // Tuesday
+    console.log(parent.children[1].classList); // DOMTokenList ["day"]
+    console.log(parent.children[1].classList.contains('day')); // true
+    console.log(parent.children[1].classList.contains('weekend')); // false
 
+    ->
+    // Now looping all the html collection of it:
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerText);  
+    }
+    // output:
+            // Monday
+            // Tuesday
+            // Wednesday
+            // Thursday
+            // Friday
+
+    
+    // -> we can even manipulate via style too:    
+        // we can even manipulate via style too:
+        parent.children[0].style.color = 'red';
+        console.log(parent.children[0].style.color); // red
+        parent.children[0].style.color = 'green';
+        console.log(parent.children[0].style.color); // green
+    
+    // -> here we will acess the individual child by in-hand Property:
+    console.log(parent.firstElementChild.innerHTML); // Monday
+    console.log(parent.lastElementChild.innerHTML); // Friday
+
+    // -> accessing its parent element
+    const child=document.querySelector('.day')// it just returns the first child until here
+    console.log(child.innerHTML); // Monday
+
+    console.log(child.parentElement.className); // parent, here we retrive the root element to this.
+    console.log(child.parentElement.children); // HTMLCollection(5) [div.day, div.day, div.day, div.day, div.day]
+    console.log(child.parentElement.children[0].innerHTML); // Monday
+    console.log(child.nextElementSibling.className); // day
+    console.log(child.nextElementSibling.innerHTML); // Tuesday
+
+        // Exercise: creating an HTML file... using js(DOM)
+            _____________________________
+            <div id="title" class="day">
+                <h1>Hello</h1>
+            </div>
+            _____________________________
+
+            // for div
+            const div=document.createElement('div');
+            div.className='day';
+            div.id="title"
+
+            // for h1
+            const h1=document.createElement('h1');
+            h1.innerHTML="Hello"
+            div.append(h1);
+            
+            // creating a root, element as document.body
+            const root=document.body;
+            root.append(div);
 
 
 
