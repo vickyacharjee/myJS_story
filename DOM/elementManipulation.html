@@ -67,10 +67,17 @@
 
     // for h1
     const h1=document.createElement('h1');
+    //
+    // const addText=document.createTextNode('hello')
+    // h1.appendChild(addText);// this works the same as innerHTML, innerText and others too etc etc
+    //
     h1.innerHTML="Hello"
+    h1.style.color="red"
     div.append(h1);
     const root=document.body;
     root.append(div);
+    // using setAttribute.. this method basically provide an attribute to the element such as title, id, class, value etc
+    div.setAttribute('title','Hello');
 
 
 

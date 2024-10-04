@@ -1797,7 +1797,7 @@ example: document.getElementById('heading')
         document.getElementsByName('name')[0] // returns the first element with name name
 --------------------------------------------------------------------------------------------------------------------------------
 
---NdeList:
+--NodeList:
 1. NodeList.prototype.forEach() // this is used to loop through the NodeListIn the Document Object Model (DOM),
    a NodeList is a collection of DOM nodes, typically returned by methods like document.querySelectorAll() or childNodes.
    It looks similar to an array, but it’s not exactly the same because it doesn’t have all the array methods (unless converted to an array explicitly).
@@ -1911,6 +1911,51 @@ console.log(array); // Output: [div, div, div]
             // creating a root, element as document.body
             const root=document.body;
             root.append(div);
+--------------------------------------------------------------------------------------------------------------------------------
+
+--using append-child, replaceWith,outterHtml:
+
+    //normal approach   
+    function addLangName(params) {
+        const parent=document.querySelector('.language');
+        const li=document.createElement('li');
+        li.textContent=params;
+        parent.appendChild(li);
+    }
+    addLangName("javaScript");
+    addLangName("java");
+    // optimized approach
+    function addOptiLang(params) {
+        const parent=document.querySelector('.language');
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(params));
+        parent.appendChild(li);
+    }
+    addOptiLang('Go')
+
+        output:
+        javaScript
+        java
+        Go
+
+  //using replaceWith:
+    const secondLang = document.querySelector('.language li:nth-child(1)')
+    console.log(secondLang);
+    const newLi=document.createElement('li');
+    newLi.textContent='typescript';
+    secondLang.replaceWith(newLi);
+
+ //outterHtml
+    const thirdChild=document.querySelector('.language li:nth-child(2)');
+    console.log(thirdChild);
+    thirdChild.outerHTML="<li>C++</li>"   
+
+//remove()
+    const toRemove=document.querySelector('.language li:last-child');
+    toRemove.remove();
+--------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 

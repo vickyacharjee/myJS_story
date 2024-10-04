@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="data" placeholder="enter the name here" type="text">
+    <button id="button">press here</button>
+
+</body>
+<script>
+    const dataInput = document.getElementById('data');
+    const button = document.getElementById('button');
+
+    button.addEventListener('click', () => {
+        const data = dataInput.value;
+        // console.log("data: " + data);
+        if (data.length>5) {
+            const h1=document.createElement('h1')
+            h1.className="lang";
+            h1.innerHTML=`${data.substring(0,10)}....`   
+            const root=document.body;
+            root.appendChild(h1);
+            
+        }
+        else{
+            const h1=document.createElement('h1')
+            h1.innerHTML=`${data}`
+            const root=document.body;
+            root.appendChild(h1);
+        }
+       
+    });
+</script>
+</html>

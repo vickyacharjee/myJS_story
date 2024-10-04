@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+
+    </ul>
+    
+</body>
+<script>
+    //normal approach
+    function addLangName(params) {
+        const parent=document.querySelector('.language');
+        const li=document.createElement('li');
+        li.textContent=params;
+        parent.appendChild(li);
+    }
+    addLangName("javaScript");
+    addLangName("java");
+    // optimized approach
+    function addOptiLang(params) {
+        const parent=document.querySelector('.language');
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(params));
+        parent.appendChild(li);
+    }
+    addOptiLang('Go');
+    const child=document.querySelector('li');
+    console.log(child);
+    const li=document.createElement('li');
+    li.textContent='Python';
+    child.replaceWith(li);
+
+    const secondLang = document.querySelector('.language li:nth-child(1)')
+    console.log(secondLang);
+    const newLi=document.createElement('li');
+    newLi.textContent='typescript';
+    secondLang.replaceWith(newLi);
+
+    const thirdChild=document.querySelector('.language li:nth-child(2)');
+    console.log(thirdChild);
+    thirdChild.outerHTML="<li>C++</li>"
+    
+    const toRemove=document.querySelector('.language li:last-child');
+    toRemove.remove();
+
+    
+
+    
+
+
+    
+</script>
+</html>
