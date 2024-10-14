@@ -1955,13 +1955,202 @@ console.log(array); // Output: [div, div, div]
     toRemove.remove();
 --------------------------------------------------------------------------------------------------------------------------------
 
+--Events in DOM:
+ In mordern era we can access the element events in 3 ways:
+    1. directly from the html tag =EX> <h1 onclick="alert('walk')">...</h1>
+    
+    2. using onClick() listner =EX> const target=document.getElementById('walk').onclick=()=>{
+                                            alert('walk');
+                                        }
 
+    3. using addEventListener() =EX> const target=document.getElementById('walk').addEventListener('click
+                                        ,()=>{
+                                            alert('walk');
+                                        },false);
 
+ **IMPT TOPIc:
+    event propagation:
+    when we click on an element, the event is not only triggered on that element but also on
+    its parent and all the way up to the root element. This is called event propagation.
+    there are 3 types of event propagation:
+    1. Capturing phase: the event is triggered on the root element and then moves down
+    to the target element.
+    2. Target phase: the event is triggered on the target element.
+    3. Bubbling phase: the event is triggered on the target element and then moves
+    up to the root element.
 
+    -> Bubbling phase:
+         const build=document.getElementById('building').addEventListener('click',(e)=>{
+              console.log('clicked from building');
+            },false)
+            const ul=document.getElementById('ul').addEventListener('click',(e)=>{
+              console.log('click from ul');
+            },false)
 
+        outPut:clicked from building
+        click from ul
+    
+      [  ->innereElement -> parentElement ]
 
+    -> Capturing phase:
 
+               const build=document.getElementById('building').addEventListener('click',(e)=>{
+                console.log('clicked from building');
+                },true)                
+               const build=document.getElementById('building').addEventListener('click',(e)=>{
+                console.log('clicked from building');
+                },true)
+    
+        outPut:click from ul
+        clicked from building         
 
+      [  ->innereElement -> parentElement ]
+
+    // These bubbing and capturing can be stopped by stopPropagation()
+    // and stopImmediatePropagation() respectively
+    const build=document.getElementById('building').addEventListener('click',(e)=>{
+        console.log('clicked from building');
+        e.stopPropagation();
+        },false)
+
+    // event.target prototypes 
+    Common Properties of event.target
+
+    tagName:
+    Returns the tag name of the element in uppercase.
+    Example: event.target.tagName (e.g., 'DIV', 'BUTTON').
+
+    id:
+    Returns the id attribute value of the element.
+    Example: event.target.id (e.g., 'submit-btn').
+
+    className:
+    Returns the class attribute value of the element.
+    Example: event.target.className (e.g., 'btn primary').
+
+    parentNode:
+    Returns the parent node of the element.
+    Example: event.target.parentNode.
+
+    children:
+    Returns a live HTMLCollection of the element’s child elements.
+    Example: event.target.children.
+
+    firstChild:
+    Returns the first child node of the element.
+    Example: event.target.firstChild.
+
+    lastChild:
+    Returns the last child node of the element.
+    Example: event.target.lastChild.
+
+    nextSibling:
+    Returns the next sibling node of the element.
+    Example: event.target.nextSibling.
+
+    previousSibling:
+    Returns the previous sibling node of the element.
+    Example: event.target.previousSibling.
+
+    innerHTML:
+    Gets or sets the HTML content of the element.
+    Example: event.target.innerHTML.
+
+    textContent:
+    Gets or sets the text content of the element.
+    Example: event.target.textContent.
+
+    style:
+    Accesses the inline style of the element as a CSSStyleDeclaration object.
+    Example: event.target.style.
+
+    attributes:
+    Returns a collection of all attribute nodes registered to the element.
+    Example: event.target.attributes.
+
+    dataset:
+    Returns a DOMStringMap object for reading/writing custom data attributes (e.g., data-* attributes).
+    Example: event.target.dataset.
+
+    offsetParent:
+    Returns the closest positioned containing element.
+    Example: event.target.offsetParent.
+
+    offsetTop:
+    Returns the distance from the outer border of the element to the top of the offset parent.
+    Example: event.target.offsetTop.
+
+    offsetLeft:
+    Returns the distance from the outer border of the element to the left of the offset parent.
+    Example: event.target.offsetLeft.
+
+    clientWidth:
+    Returns the inner width of the element, including padding but excluding the scrollbar.
+    Example: event.target.clientWidth.
+
+    clientHeight:
+    Returns the inner height of the element, including padding but excluding the scrollbar.
+    Example: event.target.clientHeight.
+
+    scrollWidth:
+    Returns the total width of the element's content, including content not visible on the screen due to overflow.
+    Example: event.target.scrollWidth.
+
+    scrollHeight:
+    Returns the total height of the element's content, including content not visible on the screen due to overflow.
+    Example: event.target.scrollHeight.
+
+     //exercise: delete the pics whichever clicked on.
+            const ul=document.getElementById('ul')
+            ul.addEventListener('click',function (e) {
+                let c=confirm(`OK to delete... ${e.target.id.toUpperCase()}`);
+                if (c) {
+                    if (e.target.tagName==='IMG') {
+                        const toRemove=e.target.parentNode;
+                        toRemove.remove()
+                    }                
+                }
+
+            })
+--------------------------------------------------------------------------------------------------------------------------------
+--WebApi: setTimeout() and setInterval()
+Web APIs are a set of APIs that provide access to the browser's functionality, such as the
+DOM, events, and storage. They are used to interact with the browser and its features.
+
+    setTimeout and setInterval are part of the Timing API in JavaScript. They are used to schedule code execution after a specified amount of time.
+    Here's how they work:
+    setTimeout():Executes a function or a block of code once after a specified delay.
+    
+    Syntax:
+    setTimeout(function, delay, arg1, arg2, ...);
+    
+    Parameters:
+    -> function: The function to execute after the delay.
+    -> delay: The delay in milliseconds (1 second = 1000 milliseconds).
+    -> arg1, arg2, ...: Optional additional arguments passed to the function when it is executed.
+
+    setInterval():Repeatedly executes a function or code block at specified intervals until it is cleared.
+    
+    Syntax:    
+    setInterval(function, interval, arg1, arg2, ...);
+    
+    Parameters:
+    ->function: The function to execute repeatedly.
+    ->interval: The time in milliseconds between each function call.
+    ->arg1, arg2, ...: Optional additional arguments passed to the function.
+
+    Example:setTimeout   
+    
+    // here if we will hold in variable also, still it functions the same
+    const reset=setTimeout(()=>{
+    console.log("hello");
+    },3000)
+    document.querySelector('button').addEventListener('click',(b)=>{
+        clearTimeout(reset)
+    }) 
+--------------------------------------------------------------------------------------------------------------------------------
+
+--
 
 
 
@@ -2000,7 +2189,6 @@ console.log(array); // Output: [div, div, div]
 
 
             
-
 
 
 

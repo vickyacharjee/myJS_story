@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>stop</button>
+    
+</body>
+<script>
+    // here if we will hold in variable also, still it functions the same
+    const reset=setTimeout(()=>{
+    console.log("hello");
+    },3000)
+    const click=document.querySelector('button')
+    click.addEventListener('click',(b)=>{
+        click.style.color="red"
+        
+        clearTimeout(reset)
+
+    })
+
+</script>
+</html>

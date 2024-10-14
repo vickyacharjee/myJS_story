@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    <ul id="cuisine-list"></ul>
+    
+</body>
+<script>
+    async function fetchApi(url, params = {}) {
+  /**
+   * Fetch API data from the given URL.
+   *
+   * @param {string} url - API endpoint URL
+   * @param {object} params - Optional query parameters
+   * @returns {Promise<object>} API response
+   */
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      params,
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error:", error);
+    return null;
+  }
+}
+
+// Example usage:
+const url = "https://www.netfoodish.in/api/CuisineList";
+
+fetchApi(url).then((data) =>{
+  const data2=data;
+  console.log(data2.details.data_cuisine);
+  const list = document.getElementById("cuisine-list");
+  data2.details.data_cuisine.forEach((item) => {
+    const li = document.createElement("li");
+    const img=document.createElement('img');
+    li.textContent = item.cuisine_name;
+    img.src=item.featured_image
+    list.appendChild(li);
+    list.appendChild(img)
+    });
+  
+});
+
+  </script>
+</html>
+
+
+
+
+
+

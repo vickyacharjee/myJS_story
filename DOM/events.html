@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li ><img id="walk"  width="300px" src="https://images.pexels.com/photos/27372357/pexels-photo-27372357/free-photo-of-back-view-of-a-couple-walking-on-a-sidewalk.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt=""></li>
+        <li ><img id="mount" width="300px" src="https://images.pexels.com/photos/28217963/pexels-photo-28217963/free-photo-of-a-mountain-range-with-a-road-running-through-it.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt=""></li>
+        <li ><img id="building" width="300px" src="https://images.pexels.com/photos/28237715/pexels-photo-28237715/free-photo-of-a-large-group-of-people-walking-around-a-city-square.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt=""></li>
+    </ul>
+</body>
+<script>
+    // const walk=document.getElementById('mount').onclick=()=>{
+    //     alert('mountain');
+    // }
+    // const build=document.getElementById('building').addEventListener('click',()=>{
+        //     alert('building');
+        // })
+        
+            // const build=document.getElementById('building').addEventListener('click',(e)=>{
+            //     console.log(e.target.id);
+            //     if (e.target.id) {
+            //         document.getElementById('building').remove()
+            //     }
+                
+            // })
+
+            // const build=document.getElementById('building').addEventListener('click',(e)=>{
+            //   console.log('clicked from building');
+            // },false)
+            // const ul=document.getElementById('ul').addEventListener('click',(e)=>{
+            //   console.log('click from ul');
+            // },false)
+            // const build=document.getElementById('building').addEventListener('click',(e)=>{
+            //   console.log('clicked from building');
+            // },true)
+            // const ul=document.getElementById('ul').addEventListener('click',(e)=>{
+            //   console.log('click from ul');
+            // },true)
+
+            //exercise:
+            const ul=document.getElementById('ul')
+            ul.addEventListener('click',function (e) {
+                console.log(e.nodeName);
+                
+                let c=confirm(`OK to delete... ${e.target.id.toUpperCase()}`);
+                if (c) {
+                    if (e.target.tagName==='IMG') {
+                        const toRemove=e.target.parentNode;
+                        toRemove.remove()
+                    }                
+                }
+
+            })
+
+
+        
+</script>
+</html>

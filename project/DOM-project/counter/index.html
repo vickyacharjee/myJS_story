@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="dec">decrease</button>
+    <h2 id="value"></h2>
+    <button id="inc">increase</button>
+    
+</body>
+<script>
+    const inc=document.getElementById('inc')
+    const dec=document.getElementById('dec')
+    const value=document.getElementById('value')
+    let count=0;
+    value.textContent=0
+    inc.addEventListener('click',()=>{
+        count++;
+        value.textContent=count;
+        if (count===20) {
+            value.textContent="bas bsdk"
+        }
+    })
+    dec.addEventListener('click',()=>{
+        count--;
+        value.textContent=count;
+        if (count===-1) {
+            value.textContent="upar kar bhai"
+        }
+    })
+</script>
+</html>
