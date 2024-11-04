@@ -31,6 +31,7 @@ Make sure you've got these superhero tools ready:
 ```bash
 npm install
 npm start
+```
 
 
 
@@ -117,3 +118,4 @@ For a JavaScript interview, it's beneficial to cover a wide range of foundationa
    - Hoisting: Variables and functions
 
 Would you like to focus on any specific area, like React, backend (Node.js), or any particular JS framework?
+
