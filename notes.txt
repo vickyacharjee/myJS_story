@@ -2150,7 +2150,49 @@ DOM, events, and storage. They are used to interact with the browser and its fea
     }) 
 --------------------------------------------------------------------------------------------------------------------------------
 
---
+-- Object oriented in javaScript:
+new keyword:
+The new keyword is used to create a new object from a constructor function. It is used to create
+an instance of a class.
+
+Example using function:
+    function user(username,age,isLoggedIn){
+        this.username=username
+        this.age=age
+        this.isLoggedIn=isLoggedIn
+
+        return this; // mandatorily return this 
+    }
+
+    const userOne=user('vicky',21,false)
+    const userTwo=user('akash',22,true)
+    console.log(userOne); // this will result an output of 'akash',22,true instead of 'vicky',21,false 
+                          // it basically overrides since , because we didnt created any instances
+
+
+    so, in order to avoid this: we will be using the new keyword
+    
+    Example using new keyword:
+    const userOne=user('vicky',21,false)
+    const userTwo=user('akash',22,true)
+    const userOne=new user('vicky',21,false)
+
+    console.log(userOne);
+    console.log(userTwo);
+    //user { username: 'vicky', age: 21, isLoggedIn: false }
+    //user { username: 'akash', age: 22, isLoggedIn: true }
+--------------------------------------------------------------------------------------------------------------------------------
+
+--prototype creation in javaScript:
+prototype is a property of a function that allows you to add properties and methods to the function's instances.
+
+Array 
+String
+Function
+
+
+
+
 
 
 
