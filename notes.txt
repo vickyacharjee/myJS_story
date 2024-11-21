@@ -333,7 +333,12 @@ Action: Properties don't perform any actions. Functions execute a block of code 
 Return value: Properties return their value. Functions can return a value, but it's not required.
 Now, let's look at your original code:
 
+TIP: When is return Mandatory?
+    When using curly braces {} for a multi-line function body.
+    If you explicitly want to return a value, use return in these cases.
+
 --------------------------------------------------------------------------------------------------------------------------------
+
 --Numers and Math:
 1. Numbers are used for mathematical operations
 2. Numbers are used for exponentiation
